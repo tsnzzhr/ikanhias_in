@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Ikanhias.in') }}</title>
+    <title>@yield('title')</title>
     <link rel="icon" type="image/png" href="{{ asset('fish.png') }}">
 
     <!-- Scripts -->
@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -38,7 +38,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse justify-content-center navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <div class="left navbar-nav mr-2">
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -49,7 +49,7 @@
                 <div class="mid navbar-nav mr-3 ml-3">
                     <input id="search-focus" type="search" class="form-control rounded" placeholder="Search"
                         aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
-                    <span class="input-group-text border-0 ml-1" id="search-addon">
+                    <span class="btn input-group-text border-0 ml-1" id="search-addon">
                         <i class="bi bi-search"></i>
                     </span>
                 </div>
@@ -59,7 +59,7 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/about') }}">Tentang</a>
+                            <a class="nav-link" href="{{ url('/katalog') }}">Katalog</a>
                         </li>
                         @if (Route::has('login'))
                             <li class="nav-item ">
@@ -80,8 +80,9 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                                                 document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -92,16 +93,60 @@
                             </div>
                         </li>
                     @endguest
-                </ul>
-            </div>
+                    @auth
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <!-- Left Side Of Navbar -->
+                            <div class="left navbar-nav mr-2">
+                                <a class="navbar-brand" href="{{ url('/') }}">
+                                    <img src="{{ asset('img/logo.png') }}">
+                                </a>
+                            </div>
+
+                            <div class="mid navbar-nav mr-3 ml-3">
+                                <input id="search-focus" type="submit" class="form-control rounded" placeholder="Search"
+                                    aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
+                                <span class="btn input-group-text border-0 ml-1" id="search-addon">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                            </div>
+
+                            <!-- Right Side Of Navbar -->
+                            <ul class="right navbar-nav ml-2">
+                                <!-- Authentication Links -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/katalog') }}">Katalog</a>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                                                             document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+
+                                @endauth
+                        </ul>
+                    </div>
         </nav>
     </div>
-    
+
 
     <main class="py-4">
         @yield('content')
     </main>
-    
+
     <footer class="footer mt-auto py-3">
         <div class="card">
             <div class="heading text-center">
@@ -111,12 +156,14 @@
             <div class="card-body">
                 <div class="row m-0 pt-3">
                     <div class="card col-md">
-                        <div class="card-content"> <i class="fas fa-hand-holding-usd fa-3x"></i>
+                        <div class="card-content">
                             <div class="card-title"> Ikanhias.in </div>
                             <p>PT Aneka Usaha Indonesia</p>
-                            <a href="#">Layanan dan Kebijakan</a><br>
-                            <a href="#">Hak Cipta</a><br>
-                            <a href="#">Tentang Kami</a><br>
+                            <ul class="footer-stuffs">
+                                <li><a href="#">Layanan dan Kebijakan</a></li>
+                                <li><a href="#">Hak Cipta</a></li>
+                                <li><a href="#">Tentang Kami</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="card col-md">
@@ -125,7 +172,8 @@
                             <p class="subtitle"><small><b>Mitra Kurir</b></small></p>
                             <p><small>JNE &ensp;|&ensp; J&T &ensp;|&ensp; TiKi</small></p>
                             <p class="subtitle"><small><b>Payment Service</b></small></p>
-                            <p><small>OVO &ensp;|&ensp; BRI &ensp;|&ensp; Mandiri &ensp;|&ensp; BCA &ensp;|&ensp; Dana &ensp;|&ensp; LinkAja</small></p>
+                            <p><small>OVO &ensp;|&ensp; BRI &ensp;|&ensp; Mandiri &ensp;|&ensp; BCA &ensp;|&ensp; Dana
+                                    &ensp;|&ensp; LinkAja</small></p>
                         </div>
                     </div>
                     <div class="card col-md">
@@ -140,15 +188,14 @@
             </div>
             <div class="card-footer row m-0">
                 <div>
-                    <p> <label
-                            class="footer-right"> <i class="fab fa-instagram"></i> <i
+                    <p> <label class="footer-right"> <i class="fab fa-instagram"></i> <i
                                 class="fab fa-facebook-square"></i> <i class="fab fa-linkedin"></i> <i
                                 class="fab fa-twitter-square"></i> </label> </p>
                 </div>
             </div>
         </div>
     </footer>
-    
+
 </body>
 
 </html>

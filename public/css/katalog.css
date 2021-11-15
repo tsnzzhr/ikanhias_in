@@ -1,3 +1,96 @@
-.logo{
-    background-color: aqua;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap");
+
+:root {
+    --dazzle: #415a77;
+    --soft: #778da9;
+    --platinum: #e0e1dd;
+}
+
+.container{
+    color: black !important;
+}
+
+.vl {
+    border-left: 2px solid var(--soft);
+    height: inherit;
+}
+
+.sidebar{
+    margin: 20px auto;
+}
+
+.form-check {
+    margin: 10px auto;
+}
+
+.card-group{
+    margin: auto 20px;
+}
+
+.card-title-k{
+    margin-top:0;
+}
+
+.katalog .card-title, .card-text, .harga, .rating, .stok{
+    color :black !important;
+}
+
+.katalog .card-title-k{
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: var(--dazzle) !important;
+    letter-spacing: 1.5px;
+}
+
+.card-item {
+    min-width: 15rem;
+    max-width: 15rem;
+    background: rgba(119, 141, 169, 0.75) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+    backdrop-filter: blur(2.5px) !important;
+    -webkit-backdrop-filter: blur(2.5px) !important;
+    border-radius: 10px !important;
+}
+
+
+.img-item{
+    height: 12.5rem;
+    width: 12.5rem;
+    border-radius: 10px;
+}
+
+.pagination-box{
+    margin: 30px;
+}
+
+.icon {
+    height: 32px;
+    width: 32px;
+}
+
+.icon, .text-icon{
+    display: inline-block;
+}
+
+.btn-bottom{
+    width: inherit !important;
+    display: block;
+    background-color: #415a77;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none !important;
+    color:white !important;
+}
+
+.detail{
+    background-color: transparent !important;
+    background-image: url(../img/detail.png);
+    background-size: 30px 30px;
+    width:34px;
+    height:34px;
 }

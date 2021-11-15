@@ -12,6 +12,7 @@ body{
     font-family: 'Poppins', sans-serif !important;
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
 
 footer a{
@@ -61,8 +62,8 @@ i{
 }
 
 .bdr {
-    border-bottom: 1.5px solid #FFB74D;
-    width: 65px;
+    border-bottom: 1.5px solid var(--platinum);
+    width: 100px;
     margin-top: 1rem;
     margin-right: auto;
     margin-left: auto
@@ -79,6 +80,10 @@ i{
     margin-left: 15px
 }
 
+.footer-stuffs{
+    line-height: 40px;
+}
+
 .fa-hand-holding-usd {
     color: #FFB74D
 }
@@ -90,8 +95,9 @@ i{
 .card-title {
     margin-bottom: .75rem;
     font-weight: 900;
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 1.75rem;
+    letter-spacing: 1.5px;
 }
 
 .learn-more {
