@@ -18,11 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/katalog', function(){
+Route::get('/katalog', function () {
     return view('katalog');
 });
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
