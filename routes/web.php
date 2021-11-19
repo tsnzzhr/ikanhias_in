@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\katalog;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +19,14 @@ Route::get('/', function () {
 
 Route::get('/katalog', function(){
     return view('katalog');
+});
+
+Route::get('/keranjang', function(){
+    return view('keranjang');
+});
+
+Route::get('/invoice', function(){
+    return view('invoice');
 });
 
 Auth::routes();

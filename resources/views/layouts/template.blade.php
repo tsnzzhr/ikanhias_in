@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <div class="app">
+    <div class="app template">
         <nav class="navbar navbar-expand-md shadow-sm">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="mid navbar-nav mr-3 ml-3">
-                    <input id="search-focus" type="search" class="form-control rounded" placeholder="Search"
+                    <input id="search-focus" type="search" class="form-control rounded" placeholder="Cari Produk"
                         aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
                     <span class="btn input-group-text border-0 ml-1" id="search-addon">
                         <i class="bi bi-search"></i>
@@ -57,7 +57,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="right navbar-nav ml-2">
                     <!-- Authentication Links -->
-                    @guest
+                   @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/katalog') }}">Katalog</a>
                         </li>
@@ -94,24 +94,6 @@
                         </li>
                     @endguest
                     @auth
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <!-- Left Side Of Navbar -->
-                            <div class="left navbar-nav mr-2">
-                                <a class="navbar-brand" href="{{ url('/') }}">
-                                    <img src="{{ asset('img/logo.png') }}">
-                                </a>
-                            </div>
-
-                            <div class="mid navbar-nav mr-3 ml-3">
-                                <input id="search-focus" type="submit" class="form-control rounded" placeholder="Search"
-                                    aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
-                                <span class="btn input-group-text border-0 ml-1" id="search-addon">
-                                    <i class="bi bi-search"></i>
-                                </span>
-                            </div>
-
-                            <!-- Right Side Of Navbar -->
-                            <ul class="right navbar-nav ml-2">
                                 <!-- Authentication Links -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/katalog') }}">Katalog</a>
@@ -126,7 +108,7 @@
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                                                             document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
 
@@ -135,27 +117,30 @@
                                             @csrf
                                         </form>
                                     </div>
-
-                                @endauth
-                        </ul>
-                    </div>
+                                </li>
+                           
+                            @endauth
+                        </div>
+                </ul>
+            </div>
         </nav>
+        
     </div>
 
 
-    <main class="py-4">
+    <main class="m-1">
         @yield('content')
     </main>
 
     <footer class="footer mt-auto py-3">
-        <div class="card">
+        <div class="card-item card-footer-wrap">
             <div class="heading text-center">
                 <img src="{{ asset('img/logo.png') }}">
                 <p class="bdr"></p>
             </div>
             <div class="card-body">
                 <div class="row m-0 pt-3">
-                    <div class="card col-md">
+                    <div class="card-item col-md">
                         <div class="card-content">
                             <div class="card-title"> Ikanhias.in </div>
                             <p>PT Aneka Usaha Indonesia</p>
@@ -166,8 +151,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="card col-md">
-                        <div class="card-content"> <i class="far fa-handshake fa-3x"></i>
+                    <div class="card-item col-md">
+                        <div class="card-content">
                             <div class="card-title"> PARTNERSHIP </div>
                             <p class="subtitle"><small><b>Mitra Kurir</b></small></p>
                             <p><small>JNE &ensp;|&ensp; J&T &ensp;|&ensp; TiKi</small></p>
@@ -176,8 +161,8 @@
                                     &ensp;|&ensp; LinkAja</small></p>
                         </div>
                     </div>
-                    <div class="card col-md">
-                        <div class="card-content"> <i class="fas fa-mobile-alt fa-3x"></i>
+                    <div class="card-item col-md">
+                        <div class="card-content">
                             <div class="card-title"> KONTAK KAMI : </div>
                             <p><small>EMAIL : marketing_admin@ikanhiasin.com</small></p>
                             <p><small>TELEPON : 081123456789</small></p>

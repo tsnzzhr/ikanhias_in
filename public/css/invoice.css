@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap");
+:root {
+    --dazzle: #415a77;
+    --soft: #778da9;
+    --platinum: #e0e1dd;
+}
+
+.invoice-group {
+    margin: 3rem auto;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.invoice-group h2, .card-title{
+    color: var(--dazzle) !important;
+}
+
+.invoice-group .card{
+    min-width: 100% !important;
+    padding: 1rem !important;
+    border-radius: 10px !important;
+    background: linear-gradient(330deg, #ffffff, var(--platinum));
+    box-shadow: 9px 9px 7px #c4c4c4;
+    margin: 10px auto;
+    display: flex;
+}
+
+.invoice-group .card-horizontal {
+    display:inline-flex;
+    flex: 1 1 auto;
+}
+
+.invoice-group .card-deck {
+    margin: 2rem auto !important;
+    display: flex;
+}
+
+.invoice-group .card-body {
+    max-width:27rem  !important;
+    display: inline-block;
+}
+
+
+.invoice-group .card-img {
+    max-width: 10rem !important;
+    max-height: 10rem !important;
+    border-radius: 15px;
+}
+
+.invoice-group .btn{
+    float:right;
+    margin:auto .5rem;
+    background-color: var(--dazzle) !important;
+    border-radius: 10px !important;
+    color: white !important;
+    padding: 15px;
+}

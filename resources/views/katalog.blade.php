@@ -4,34 +4,34 @@
 
 @section('content')
     <link href="{{ asset('css/katalog.css') }}" rel="stylesheet" />
-    <div class="container katalog">
+    <div class="container justify-content-center katalog">
         <h2 class="m-3" style="font-weight: 800;">Katalog Produk</h2>
         <div class="row">
-            <div class="col-3">
+            <div class="w-60">
                 <div class="sidebar">
-                    <h4>Urut Berdasarkan :</h4>
+                    <h5><b>Urut Berdasarkan :</b></h5>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Rating
+                        <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio1" checked>
+                        <label class="form-check-label" for="flexRadio1">
+                           Rating Terbaik
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Terbaru
+                        <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio2">
+                        <label class="form-check-label" for="flexRadio2">
+                            Produk Terbaru
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Terlaris
+                        <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio3">
+                        <label class="form-check-label" for="flexRadio2">
+                            Penjualan Terbanyak
                         </label>
                     </div>
                 </div>
 
                 <div class="sidebar">
-                    <h4>Kategori :</h4>
+                    <h5><b>Kategori :</b></h5>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                         <label class="form-check-label" for="flexCheckChecked">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-9 katalog">
+            <div class="col katalog">
                 <div class="vl">
                     <div class="card-group d-flex align-items-stretch">
                         <div class="card card-item m-2">
@@ -66,12 +66,12 @@
 
                                 <div class="harga">
                                     <img class="icon" src="{{ asset('img/money.png') }}">
-                                    <p class="text-icon">Harga : Rp <span>58000</span></p>
+                                    <p class="text-icon">Rp <span>58,000</span></p>
                                 </div>
 
                                 <div class="stok">
                                     <img class="icon" src="{{ asset('img/box.png') }}">
-                                    <p class="text-icon">Tersedia : <span> 5 </span></p>
+                                    <p class="text-icon">Tersedia <span> 5 </span> Produk</p>
                                 </div>
 
                                 <div class="rating">
@@ -100,12 +100,12 @@
 
                                 <div class="harga">
                                     <img class="icon" src="{{ asset('img/money.png') }}">
-                                    <p class="text-icon">Harga : Rp <span>45000</span></p>
+                                    <p class="text-icon">Rp <span>45,000</span></p>
                                 </div>
 
                                 <div class="stok">
                                     <img class="icon" src="{{ asset('img/box.png') }}">
-                                    <p class="text-icon">Tersedia : <span> 8 </span></p>
+                                    <p class="text-icon">Tersedia <span> 8 </span>  Produk</p>
                                 </div>
 
                                 <div class="rating">
@@ -135,12 +135,12 @@
 
                                 <div class="harga">
                                     <img class="icon" src="{{ asset('img/money.png') }}">
-                                    <p class="text-icon">Harga : Rp <span>400000</span></p>
+                                    <p class="text-icon">Rp <span>400,000</span></p>
                                 </div>
 
                                 <div class="stok">
                                     <img class="icon" src="{{ asset('img/box.png') }}">
-                                    <p class="text-icon">Tersedia : <span> 3 </span></p>
+                                    <p class="text-icon">Tersedia <span> 3 </span> Produk</p>
                                 </div>
 
                                 <div class="rating">

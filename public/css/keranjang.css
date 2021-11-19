@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap");
+:root {
+    --dazzle: #415a77;
+    --soft: #778da9;
+    --platinum: #e0e1dd;
+}
+
+.keranjang-group {
+    margin: 3rem auto;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.keranjang-group h2{
+    color: var(--dazzle);
+}
+
+.keranjang-group .card {
+    min-width: 100% !important;
+    padding: 2rem !important;
+    border-radius: 10px !important;
+    background: linear-gradient(330deg, #ffffff, var(--platinum));
+    box-shadow: 9px 9px 7px #c4c4c4;
+    margin: 10px auto;
+    display: flex;
+}
+
+.keranjang-group .icons{
+    height: 25px;
+    width: 25px;
+    display: block;
+}
+
+.keranjang-group .card-title{
+    color: var(--dazzle) !important;
+}
+
+.keranjang-group .btn-delete, .keranjang-group .btn-cekout{
+    background-color: var(--dazzle);
+    width:  inherit;
+    height: inherit;
+    border-radius: 100%;
+    padding: 15px;
+}
+
+.keranjang-group .card-horizontal {
+    display:inline-flex;
+    flex: 1 1 auto;
+}
+
+.keranjang-group .card-deck {
+    margin: 2rem auto !important;
+    display: flex;
+}
+
+.keranjang-group .card-body {
+    max-width:27rem  !important;
+    display: inline-block;
+}
+
+
+.keranjang-group .card-img {
+    max-width: 10rem !important;
+    max-height: 10rem !important;
+    border-radius: 15px;
+}
+
+.keranjang-group .btn{
+    display: inline-block !important;
+    margin:auto .5rem;
+}
+
+.keranjang-group .value-button {
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px 0;
+    background: var(--dazzle);
+    color:white;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.keranjang-group form{
+    width: 8.5rem;
+    margin:  0;
+}
+
+.keranjang-group .value-button:hover {
+    cursor: pointer;
+}
+
+.keranjang-group form #decrease {
+    margin-right: -4px;
+    border-radius: 8px 0 0 8px;
+}
+
+.keranjang-group form #increase {
+    margin-left: -4px;
+    border-radius: 0 8px 8px 0;
+}
+
+.keranjang-group form #input-wrap {
+    margin: 0px;
+    padding: 0px;
+}
+
+.keranjang-group input#number {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 30px;
+}
+
+.keranjang-group input[type="number"]::-webkit-inner-spin-button,
+.keranjang-group input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

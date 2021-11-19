@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Ikanhias.in</title>
+        <title>Ikanhias.in | Home</title>
 
+        <link rel="icon" type="image/png" href="{{ asset('fish.png') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -21,8 +22,8 @@
         </style>
     </head>
     <body class="antialiased">
-        @extends('layouts.template')
 
+        @extends('layouts.template')
         @section('content')
         <div class="justify-center min-h-screen sm:items-center py-4 sm:pt-0">
             
