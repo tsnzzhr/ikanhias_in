@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
 :root{
     --dazzle:#415A77;
     --soft:#778DA9;
@@ -17,7 +17,7 @@ body{
 }
 
 body::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
 }
 
 body::-webkit-scrollbar-track {
@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 a{
-    color:var(--platinum) !important;
+    color:var(--dazzle) !important;
 }
 
 .btn-primary{
@@ -142,4 +142,107 @@ footer .card-item {
 
 .follow-text {
     color: white;
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+.chat-box .chat-button{
+    width:60px;
+    height: 60px;
+    background-color: var(--dazzle);;
+    color: white;
+    padding:13px;
+    vertical-align: middle;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index:10;
+    border-radius: 100%;
+}
+
+.chat-button i{
+    font-size:  30px;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  z-index: 15;
+}
+
+.message-list{
+  overflow-y: auto;
+  max-height: 250px;
+}
+
+.chat{
+  color :black !important;
+  background-color: var(--platinum) !important;
+  width: inherit;
+  margin: 8px auto !important;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 5px 10px !important;
+}
+
+.chat-box .card-body p{
+  margin: .05px;
+}
+
+.chat-box .form-container {
+  min-width: 250px;
+  padding: 30px;
+  background-color: var(--soft);
+  position: fixed;
+  bottom: 20px;
+  right: 95px;
+  border-radius: 10px;
+  color:white;
+}
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 70px;
+  border-radius: 10px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: var(--dazzle);
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 1;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 0.8;
 }

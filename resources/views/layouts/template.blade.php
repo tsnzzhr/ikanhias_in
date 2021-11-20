@@ -30,6 +30,52 @@
 </head>
 
 <body>
+    <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "inline-block";
+        }
+  
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+  
+        function reaction() {
+          if (document.getElementById("myForm").style.display == "none") {
+            openForm();
+          } else {
+            closeForm();
+          }
+        }
+      </script>
+        <div class="chat-box d-inline">
+          <div class="chat-popup" id="myForm">
+            <form class="form-container">
+              <h1>Chatbox</h1>
+  
+              <label for="msg">Halo, Customer!</label>
+              <div class="message-list">
+                <div class="card-body chat">
+                  <p>Ada yang bisa kami bantu?</p>
+                </div>
+                <div class="card-body chat">
+                  <p>Apakah ikan arwana tersedia?</p>
+                </div>
+              </div>
+              <textarea
+                placeholder="ketik untuk memulai chat dengan admin.."
+                name="msg"
+                id="msg"
+                required
+              ></textarea>
+  
+              <button type="submit" id="sendMessage" class="btn">Kirim</button>
+            </form>
+          </div>
+          <div onclick="reaction()" class="btn chat-button">
+            <i class="bi-chat-dots"></i>
+          </div>
+        </div>
+      </div>
     <div class="app template">
         <nav class="navbar navbar-expand-md shadow-sm">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -59,7 +105,7 @@
                     <!-- Authentication Links -->
                    @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/katalog') }}">Katalog</a>
+                            <a class="nav-link" href="#">Katalog</a>
                         </li>
                         @if (Route::has('login'))
                             <li class="nav-item ">
@@ -96,7 +142,7 @@
                     @auth
                                 <!-- Authentication Links -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/katalog') }}">Katalog</a>
+                                    <a class="nav-link" href="#">Katalog</a>
                                 </li>
 
                                 <li class="nav-item dropdown">
@@ -128,7 +174,7 @@
     </div>
 
 
-    <main class="m-1">
+    <main class="mt-1">
         @yield('content')
     </main>
 

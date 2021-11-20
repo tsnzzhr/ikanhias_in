@@ -1,5 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
+<title>Ikanhias.in | Masuk</title>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/katalog', function(){
-    return view('katalog');
-});
-
 Route::get('/keranjang', function(){
     return view('keranjang');
 });
@@ -28,6 +24,15 @@ Route::get('/keranjang', function(){
 Route::get('/invoice', function(){
     return view('invoice');
 });
+
+Route::get('/detail-invoice', function(){
+    return view('invoice_detail');
+});
+
+Route::get('/checkout', function(){
+    return view('checkout');
+});
+
 
 Auth::routes();
 

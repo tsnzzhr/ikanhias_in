@@ -35,7 +35,6 @@
 }
 
 .invoice-group .card-body {
-    max-width:27rem  !important;
     display: inline-block;
 }
 
@@ -53,4 +52,27 @@
     border-radius: 10px !important;
     color: white !important;
     padding: 15px;
+}
+
+.invoice-detail .vl{
+    border-left: 2px solid var(--soft);
+    height: inherit;
+}
+
+.invoice-detail{
+    color:var(--dazzle);
+}
+
+.invoice-detail a{
+    padding: 10px 20px;
+    background-color: var(--dazzle);
+    color:white !important;
+    margin: 5px;
+    border-radius: 10px;
+    text-decoration: none !important;
+}
+
+.invoice-detail .tombol{
+    float: right;
+    margin:20px;
 }

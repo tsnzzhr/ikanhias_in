@@ -8,49 +8,49 @@
     <div class="card-deck">
         <div class="card">
             <div class="card-horizontal">
-                <img class="card-img" src="{{asset('img/ochiba-sigure.jpg')}}">
                 <div class="card-body">
-                    <h5 class="card-title"><b>Koi Ochiba Sigure</b></h5>
+                    <h5 class="card-title"><b>INV/001/03/19112021</b></h5><!--INV_IDPembeli_NoInvoicePembeli_TglCheckout-->
                     <p class="card-text">Tanggal Pembayaran : <span>-</span></p>
                     <p class="card-text">Deadline Pembayaran : <span>20/11/2021 23:59:00</span></p>
                     <p class="card-text"><small>Status : <span class="text-muted">Menunggu  Pembayaran</span></small></p>
                 </div>
                 <div class="card-body align-self-center">
-                    <div class="btn btn-detail" title="Detail Invoice">
+                    <a class="btn btn-detail" title="Detail Invoice" href="{{ url('/detail-invoice') }}">
                         Detail Invoice
-                    </div>
+                    </a>
+                    <a class="btn btn-detail" title="Detail Invoice" href="{{ url('/detail-invoice') }}">
+                        Batalkan Invoice
+                    </a>
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="card-horizontal">
-                <img class="card-img" src="{{asset('img/ki-utsuri.jpg')}}">
                 <div class="card-body">
-                    <h5 class="card-title"><b>Koi Ki-Utsuri</b></h5>
+                    <h5 class="card-title"><b>INV/001/02/19102021</b></h5><!--INV_IDPembeli_NoInvoicePembeli_TglCheckout-->
                     <p class="card-text">Tanggal Pembayaran : <span>-</span></p>
-                    <p class="card-text">Deadline Pembayaran : <span>21/11/2021 11:59:00</span></p>
-                    <p class="card-text"><small>Status : <span class="text-success">Berhasil</span></small></p>
-                </div>
-                <div class="card-body align-self-center">
-                    <div class="btn btn-detail" title="Detail Invoice">
-                        Detail Invoice
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-horizontal">
-                <img class="card-img" src="{{asset('img/chinsurin.jpg')}}">
-                <div class="card-body">
-                    <h5 class="card-title"><b>Koki Chinshurin</b></h5>
-                    <p class="card-text">Tanggal Pembayaran : <span>-</span></p>
-                    <p class="card-text">Deadline Pembayaran : <span>20/11/2021 23:59:00</span></p>
+                    <p class="card-text">Deadline Pembayaran : <span>20/10/2021 15:20:20</span></p>
                     <p class="card-text"><small>Status : <span class="text-danger">Dibatalkan</span></small></p>
                 </div>
                 <div class="card-body align-self-center">
-                    <div class="btn btn-detail" title="Detail Invoice">
+                    <a class="btn btn-detail" title="Detail Invoice" href="{{ url('/detail-invoice') }}">
                         Detail Invoice
-                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-horizontal">
+                <div class="card-body">
+                    <h5 class="card-title"><b>INV/001/01/19092021</b></h5><!--INV_IDPembeli_NoInvoicePembeli_TglCheckout-->
+                    <p class="card-text">Tanggal Pembayaran : <span>19/09/2021 19:11:10 </span></p>
+                    <p class="card-text">Deadline Pembayaran : <span>20/09/2021 11:33:22</span></p>
+                    <p class="card-text"><small>Status : <span class="text-success">Berhasil</span></small></p>
+                </div>
+                <div class="card-body align-self-center">
+                    <a class="btn btn-detail" title="Detail Invoice" href="{{ url('/detail-invoice') }}">
+                        Detail Invoice
+                    </a>
                 </div>
             </div>
         </div>

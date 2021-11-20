@@ -1,5 +1,6 @@
 @extends('layouts.template')
 
+<title>Ikanhias.in | Daftar </title>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
