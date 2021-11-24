@@ -1,5 +1,5 @@
 @extends('layouts.template')
-
+@auth
 <title>Ikanhias.in | Invoice</title>
 <link href="{{ asset('css/invoice.css') }}" rel="stylesheet">
 @section('content')
@@ -56,4 +56,6 @@
         </div>
     </div>
 </div>
+
+@endauth
 @endsection

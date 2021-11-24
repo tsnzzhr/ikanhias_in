@@ -1,5 +1,4 @@
 @extends('layouts.template')
-
 <title>Ikanhias.in | Lihat Invoice</title>
 <link href="{{ asset('css/invoice.css') }}" rel="stylesheet">
 

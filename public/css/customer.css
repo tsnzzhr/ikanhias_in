@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap");
+:root {
+    --dazzle: #415a77;
+    --soft: #778da9;
+    --platinum: #e0e1dd;
+}
+
+.dashboard-c h2{
+    color:var(--dazzle) !important;
+    font-weight: 800 !important;
+}
+
+.dashboard-c .form-control:focus {
+    box-shadow: none;
+    border-color: var(--dazzle);
+}
+
+.dashboard-c .profile-button {
+    background: var(--dazzle);
+    box-shadow: none;
+    border: none
+}
+
+.dashboard-c .profile-button:hover {
+    background: var(--soft) !important;
+}
+
+.dashboard-c .profile-button{
+    background-color: var(--dazzle) !important;
+}
+
+.dashboard-c .profile-button:active {
+    background: var(--soft) !important;
+    box-shadow: none
+}
+
+.dashboard-c .back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.dashboard-c  .labels {
+    font-size: 11px
+}
+
+.dashboard-c .add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}

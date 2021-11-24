@@ -10,8 +10,9 @@
     font-family: 'Poppins', sans-serif !important;
 }
 
-.keranjang-group h2{
+.keranjang-group h2, .checkout h2{
     color: var(--dazzle);
+    font-weight: 800;
 }
 
 .keranjang-group .card {
@@ -34,7 +35,7 @@
     color: var(--dazzle) !important;
 }
 
-.keranjang-group .btn-delete, .keranjang-group .btn-cekout{
+.keranjang-group .btn-delete{
     background-color: var(--dazzle);
     width:  inherit;
     height: inherit;
@@ -57,16 +58,15 @@
     display: inline-block;
 }
 
-
 .keranjang-group .card-img {
     max-width: 10rem !important;
     max-height: 10rem !important;
     border-radius: 15px;
 }
 
-.keranjang-group .btn{
+.keranjang-group .card .btn{
     display: inline-block !important;
-    margin:auto .5rem;
+    margin:auto 2.5rem;
 }
 
 .keranjang-group .value-button {
@@ -89,8 +89,16 @@
 }
 
 .keranjang-group form{
-    width: 8.5rem;
+    width: 8rem;
     margin:  0;
+}
+
+.keranjang-group .btn-cekout{
+    padding: 15px !important;
+    color : white !important;
+    width: 20%;
+    background-color: var(--dazzle) !important;
+    float:right;
 }
 
 .keranjang-group .value-button:hover {
@@ -98,12 +106,12 @@
 }
 
 .keranjang-group form #decrease {
-    margin-right: -4px;
+    margin-right: -8px;
     border-radius: 8px 0 0 8px;
 }
 
 .keranjang-group form #increase {
-    margin-left: -4px;
+    margin-left: -8px;
     border-radius: 0 8px 8px 0;
 }
 
@@ -118,7 +126,7 @@
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     margin: 0px;
-    width: 40px;
+    width: 60px;
     height: 30px;
 }
 

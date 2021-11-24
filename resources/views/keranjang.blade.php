@@ -2,14 +2,14 @@
 
 <title>Ikanhias.in | Keranjang</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <link href="{{ asset('css/keranjang.css') }}" rel="stylesheet">
 <script src="{{ asset('js/controlItem.js') }}"></script>
 @section('content')
     <div class="container mt-4 keranjang-group">
-        <h2 class="title" style="font-weight: 800;">Keranjang Belanja</h2>
+        <h2 class="title">Keranjang Belanja</h2>
         <div class="card-deck">
             <div class="card">
                 <div class="card-horizontal">
@@ -33,10 +33,6 @@
                         <div class="btn btn-delete" title="Hapus">
                             <img class="icons mx-auto my-auto" src="{{ asset('img/trash.png') }}">
                         </div>
-                        <div class="btn btn-cekout" title="Checkout">
-                            <img class="icons mx-auto my-auto" src="{{ asset('img/cekout.png') }}">
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -63,12 +59,13 @@
                         <div class="btn btn-delete" title="Hapus">
                             <img class="icons mx-auto my-auto" src="{{ asset('img/trash.png') }}">
                         </div>
-                        <div class="btn btn-cekout" title="Checkout">
-                            <img class="icons mx-auto my-auto" src="{{ asset('img/cekout.png') }}">
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <a class="btn btn-cekout m-3 text-center" href="{{ url('/checkout')}}" title="Checkout">
+            <img class="icons d-inline mx-auto my-auto" src="{{ asset('img/cekout.png') }}">
+            <p class="d-inline">Checkout</p>
+        </a>
     </div>
 @endsection

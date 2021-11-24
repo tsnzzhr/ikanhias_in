@@ -27,55 +27,56 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <style>
+        .dropdown-menu a {
+            color: #415A77 !important;
+        }
+
+    </style>
 </head>
 
 <body>
     <script>
         function openForm() {
-          document.getElementById("myForm").style.display = "inline-block";
+            document.getElementById("myForm").style.display = "inline-block";
         }
-  
+
         function closeForm() {
-          document.getElementById("myForm").style.display = "none";
+            document.getElementById("myForm").style.display = "none";
         }
-  
+
         function reaction() {
-          if (document.getElementById("myForm").style.display == "none") {
-            openForm();
-          } else {
-            closeForm();
-          }
+            if (document.getElementById("myForm").style.display == "none") {
+                openForm();
+            } else {
+                closeForm();
+            }
         }
-      </script>
-        <div class="chat-box d-inline">
-          <div class="chat-popup" id="myForm">
+    </script>
+    <div class="chat-box d-inline">
+        <div class="chat-popup" id="myForm">
             <form class="form-container">
-              <h1>Chatbox</h1>
-  
-              <label for="msg">Halo, Customer!</label>
-              <div class="message-list">
-                <div class="card-body chat">
-                  <p>Ada yang bisa kami bantu?</p>
+                <h1>Chatbox</h1>
+
+                <label for="msg">Halo, Customer!</label>
+                <div class="message-list">
+                    <div class="card-body chat">
+                        <p>Ada yang bisa kami bantu?</p>
+                    </div>
+                    <div class="card-body chat">
+                        <p>Apakah ikan arwana tersedia?</p>
+                    </div>
                 </div>
-                <div class="card-body chat">
-                  <p>Apakah ikan arwana tersedia?</p>
-                </div>
-              </div>
-              <textarea
-                placeholder="ketik untuk memulai chat dengan admin.."
-                name="msg"
-                id="msg"
-                required
-              ></textarea>
-  
-              <button type="submit" id="sendMessage" class="btn">Kirim</button>
+                <textarea placeholder="ketik untuk memulai chat dengan admin.." name="msg" id="msg" required></textarea>
+
+                <button type="submit" id="sendMessage" class="btn">Kirim</button>
             </form>
-          </div>
-          <div onclick="reaction()" class="btn chat-button">
-            <i class="bi-chat-dots"></i>
-          </div>
         </div>
-      </div>
+        <div onclick="reaction()" class="btn chat-button">
+            <i class="bi-chat-dots"></i>
+        </div>
+    </div>
+    </div>
     <div class="app template">
         <nav class="navbar navbar-expand-md shadow-sm">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -103,7 +104,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="right navbar-nav ml-2">
                     <!-- Authentication Links -->
-                   @guest
+                    @guest
                         <li class="nav-item">
                             <a class="nav-link" href="#">Katalog</a>
                         </li>
@@ -118,7 +119,17 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Daftar') }}</a>
                             </li>
                         @endif
-                    @else
+                    @endguest
+                    @auth
+                        <!-- Authentication Links -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/keranjang') }}">Keranjang</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/invoice') }}">Invoice</a>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -126,9 +137,12 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                                                 document.getElementById('logout-form').submit();">
+
+                                <a class="dropdown-item" href="#" onclick="">
+                                    {{ __('Akun') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -138,39 +152,13 @@
                                 </form>
                             </div>
                         </li>
-                    @endguest
-                    @auth
-                                <!-- Authentication Links -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Katalog</a>
-                                </li>
 
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }}
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            class="d-none">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li>
-                           
-                            @endauth
-                        </div>
-                </ul>
+                    @endauth
             </div>
-        </nav>
-        
+            </ul>
+    </div>
+    </nav>
+
     </div>
 
 

@@ -33,6 +33,13 @@ Route::get('/checkout', function(){
     return view('checkout');
 });
 
+Route::get('/edit_customer', function(){
+    return view('edit_customer');
+});
+
+Route::get('/checkout', function(){
+    return view('checkout');
+});
 
 Auth::routes();
 
