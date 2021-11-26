@@ -85,58 +85,60 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse justify-content-center navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <div class="left navbar-nav mr-2">
+                <div class="navbar-nav">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="{{ asset('img/logo.png') }}">
                     </a>
                 </div>
 
-                <div class="mid navbar-nav mr-3 ml-3">
+                <div class="navbar-nav mr-2">
                     <input id="search-focus" type="search" class="form-control rounded" placeholder="Cari Produk"
-                        aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
-                    <span class="btn input-group-text border-0 ml-1" id="search-addon">
+                        aria-label="Search" aria-describedby="search-addon" style="width:450px !important" />
+                    <span class="btn input-group-text border-0 ml-2" id="search-addon">
                         <i class="bi bi-search"></i>
                     </span>
                 </div>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="right navbar-nav ml-2">
+                
+                <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="#">Katalog</a>
-                        </li>
+                        </li> --}}
+
                         @if (Route::has('login'))
-                            <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Masuk') }}</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}" style="text-align: center">Masuk</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Daftar') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}" style="text-align: center">Daftar</a>
                             </li>
                         @endif
                     @endguest
                     @auth
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/keranjang') }}">Keranjang</a>
+                            <a class="nav-link" href="{{ url('/keranjang') }}" style="text-align: center">Keranjang</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/invoice') }}">Invoice</a>
+                            <a class="nav-link" href="{{ url('/invoice') }}" style="text-align: center">Invoice</a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="text-align: center">
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
 
                                 <a class="dropdown-item" href="#" onclick="">
                                     {{ __('Akun') }}
@@ -152,11 +154,10 @@
                                 </form>
                             </div>
                         </li>
-
                     @endauth
-            </div>
+                </div>
             </ul>
-    </div>
+        </div>
     </nav>
 
     </div>
