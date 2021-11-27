@@ -106,10 +106,6 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="#">Katalog</a>
-                        </li> --}}
-
                         @if (Route::has('login'))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}" style="text-align: center">Masuk</a>
@@ -121,8 +117,7 @@
                                 <a class="nav-link" href="{{ route('register') }}" style="text-align: center">Daftar</a>
                             </li>
                         @endif
-                    @endguest
-                    @auth
+                    @else
                         <!-- Authentication Links -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/keranjang') }}" style="text-align: center">Keranjang</a>
@@ -139,10 +134,17 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-
+                                
+                                @if (auth()->user()->email == 'admin@admin.com')
+                                <a class="dropdown-item" href="#" onclick="">
+                                    {{ __('Dashboard') }}
+                                </a>
+                                @else
                                 <a class="dropdown-item" href="#" onclick="">
                                     {{ __('Akun') }}
                                 </a>
+                                @endif
+                                
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -154,7 +156,7 @@
                                 </form>
                             </div>
                         </li>
-                    @endauth
+                    @endguest
                 </div>
             </ul>
         </div>
