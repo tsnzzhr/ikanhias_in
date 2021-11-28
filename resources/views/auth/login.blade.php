@@ -6,8 +6,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
+                
+                {{-- @if (session()->has('loginError'))
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                    <div>
+                        {{ session('loginError') }}
+                    </div>
+                </div>
+                @endif --}}
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

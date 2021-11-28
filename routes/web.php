@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\EditCustomerController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,33 +19,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/keranjang', function () {
-    return view('keranjang');
-});
+// Customer 
 
-Route::get('/invoice', function () {
-    return view('invoice');
-});
+Route::get('/keranjang', [KeranjangController::class, 'index'])->middleware('auth');
 
-Route::get('/detail-invoice', function () {
-    return view('invoice_detail');
-});
+Route::get('/invoice', [InvoiceController::class, 'index'])->middleware('auth');
 
-Route::get('/checkout', function () {
-    return view('checkout');
-});
+Route::get('/detail-invoice', [InvoiceController::class, 'showDetail'])->middleware('auth');
 
-Route::get('/edit_customer', function () {
-    return view('edit_customer');
-});
+Route::get('/checkout', [CheckoutController::class, 'index'])->middleware('auth');
 
-Route::get('/checkout', function () {
-    return view('checkout');
-});
+Route::get('/edit_customer', [EditCustomerController::class, 'index'])->middleware('auth');
+
+
+// Admin
 
 Route::get('/home', function () {
     return view('home');
@@ -50,3 +45,7 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route::get('katalog',[katalog::class, 'show'])
+
+// Testing
+
+Route::resource('products', ProductController::class);

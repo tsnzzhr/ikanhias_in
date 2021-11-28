@@ -120,11 +120,11 @@
                     @else
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/keranjang') }}" style="text-align: center">Keranjang</a>
+                            <a class="nav-link" href="/keranjang" style="text-align: center">Keranjang</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/invoice') }}" style="text-align: center">Invoice</a>
+                            <a class="nav-link" href="/invoice" style="text-align: center">Invoice</a>
                         </li>
 
                         <li class="nav-item dropdown">
