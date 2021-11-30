@@ -1,6 +1,9 @@
 @extends('layouts.template')
 <title>Ikanhias.in | Lihat Invoice</title>
 <link href="{{ asset('css/invoice.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 @section('content') 
 <div class="container mt-4 invoice-detail p-0">
