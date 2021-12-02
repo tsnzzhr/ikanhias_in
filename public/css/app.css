@@ -44,14 +44,20 @@ footer a{
     color: white !important;
 }
 
-
 .navbar{
     background-color: var(--dazzle) !important;
     font-family: 'Poppins', sans-serif !important;
+
 }
 
 .nav-item a{
     width: 120px;
+    color: white !important;
+}
+
+
+.dropdown a{
+    width: inherit !important;
     color: white !important;
 }
 
@@ -75,6 +81,9 @@ i{
     width: fit-content;
 }
 
+#search-addon{
+    background-color: var(--soft) !important;
+}
 /*FOOTER*/
 
 
@@ -137,7 +146,7 @@ footer .card-item {
 
 .card-footer-wrap .heading {
     position: relative;
-    top: 75px
+    top: 75px;
 }
 
 .follow-text {
