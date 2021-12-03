@@ -21,8 +21,8 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Jenis:</strong>
-                {{ $product->jenis }}
+                <strong>Ukuran:</strong>
+                {{ $product->ukuran }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

@@ -1,5 +1,8 @@
 @extends('layouts.template')
 <link rel="stylesheet" href="css/customer.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 @section('content')
 <div class="container dashboard-c mt-4">
     <h2>Pengaturan Akun</h2>

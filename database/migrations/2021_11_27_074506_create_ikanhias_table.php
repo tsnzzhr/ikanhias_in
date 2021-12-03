@@ -16,7 +16,7 @@ class CreateIkanhiasTable extends Migration
         Schema::create('ikanhias', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('jenis');
+            $table->integer('ukuran');
             $table->integer('usia');
             $table->integer('harga');
             $table->integer('stok');

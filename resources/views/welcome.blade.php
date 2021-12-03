@@ -385,122 +385,31 @@
                             Tertinggi
                         </label>
                     </div>
-                    <h5>Rating</h5>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                        <label class="form-check-label" for="flexRadioDefault3">
-                            Terbaik
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-                        <label class="form-check-label" for="flexRadioDefault4">
-                            Terburuk
-                        </label>
-                    </div>
-
                 </div>
             </div>
-            <div class="col katalog">
-                <div class="popup-wrap">
-                    <div class="popup-box">
-                        <style>
-                            .my-image{
-                                width: 12rem;
-                                height: 12rem;
-                                border-radius: 20px;
-                            }
-                        </style>
-                        <img class="my-image" src="{{ asset('img/chinsurin.jpg') }}" />
-                        <div class="desc-text text-left m-2">
-                            <h3 class="text-center"><span>Koi Chinshurin</span></h3>
-                            <table class="table table-striped flex">
-                                <tbody>
-                                    <tr>
-                                        <td>Harga</td>
-                                        <td><span>Rp150,000</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Usia</td>
-                                        <td><span>5</span> Bulan</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ukuran</td>
-                                        <td><span>20</span> cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tersisa</td>
-                                        <td><span>5</span> Produk</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Deskripsi</td>
-                                        <td><span>Kondisi Sehat. Ikan Air Tawar. Jauhkan Dari Jangkauan Kucing.</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <a class="close-btn popup-close" href="#">x</a>
-                    </div>
-                </div>
+            
+            <div class="col katalog">  
                 <div class="vl">
                     <div class="card-group d-flex align-items-stretch">
+                        @foreach ($products as $product)
                         <div class="card card-item m-2">
                             <div class="card-header bg-transparent">
-                                <img class="img-item" src="{{ asset('img/chinsurin.jpg') }}">
+                                <img class="img-item" src="imgProduct/{{ $product->gambar }}">
                             </div>
                             <div class="card-body">
-
-                                <p class="card-title-k d-inline-block">Koki Chinshurin</p>
-
-
+                                <div class="card-title-k d-inline-block" style="height: 80px">
+                                    <p>{{ $product->nama }}</p>
+                                </div>
                                 <div class="harga">
                                     <img class="icon" src="{{ asset('img/money.png') }}">
-                                    <p class="text-icon">Rp <span>58,000</span></p>
+                                    <p class="text-icon">Rp <span>{{ $product->harga }}</span></p>
                                 </div>
 
                                 <div class="stok">
                                     <img class="icon" src="{{ asset('img/box.png') }}">
-                                    <p class="text-icon">Tersedia <span> 5 </span> Produk</p>
+                                    <p class="text-icon">Tersedia <span> {{ $product->stok }} </span> Produk</p>
                                 </div>
-
-                                <div class="rating">
-                                    <img class="icon" src="{{ asset('img/stars.png') }}">
-                                    <p class="text-icon">Rating : <span> 3.5 </span>/5</p>
-                                </div>
-                                <div class="btn-bottom btn_bookmark">
-                                    <img class="d-inline-block" src="{{ asset('img/info.png') }}" width="32px"
-                                        height="32px">
-                                    <a class="d-inline-block" href="#">Detail</a>
-                                </div>
-                                <div class="btn-bottom btn_cart">
-                                    <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
-                                        height="32px">
-                                    <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card-item m-2">
-                            <div class="card-header bg-transparent">
-                                <img class="img-item" src="{{ asset('img/halfmoon-yellowlight.jpg') }}">
-                            </div>
-                            <div class="card-body">
-
-                                <p class="card-title-k d-inline-block">Cupang Halfmoon Yellowlight</p>
-
-                                <div class="harga">
-                                    <img class="icon" src="{{ asset('img/money.png') }}">
-                                    <p class="text-icon">Rp <span>45,000</span></p>
-                                </div>
-
-                                <div class="stok">
-                                    <img class="icon" src="{{ asset('img/box.png') }}">
-                                    <p class="text-icon">Tersedia <span> 8 </span> Produk</p>
-                                </div>
-
-                                <div class="rating">
-                                    <img class="icon" src="{{ asset('img/stars.png') }}">
-                                    <p class="text-icon">Rating : <span> 4.5 </span>/5</p>
-                                </div>
+                                
                                 <div class="btn-bottom btn_bookmark">
                                     <img class="d-inline-block" src="{{ asset('img/info.png') }}" width="32px"
                                         height="32px">
@@ -513,42 +422,47 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card card-item m-2">
-                            <div class="card-header bg-transparent">
-                                <img class="img-item" src="{{ asset('img/ochiba-sigure.jpg') }}">
+                        {{-- <div class="popup-wrap-{{ $product->id }}">
+                            <div class="popup-box-{{ $product->id }}">
+                                    <style>
+                                        .my-image{
+                                            width: 12rem;
+                                            height: 12rem;
+                                            border-radius: 20px;
+                                        }
+                                    </style>
+                                    <img class="my-image" src="imgProduct/{{ $product->gambar }}" />
+                                    <div class="desc-text text-left m-2">
+                                        <h3 class="text-center"><span>{{ $product->nama }}</span></h3>
+                                        <table class="table table-striped flex">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Harga</td>
+                                                    <td><span>Rp {{ $product->harga }}</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Usia</td>
+                                                    <td><span>{{ $product->usia }}</span> Bulan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ukuran</td>
+                                                    <td><span>{{ $product->ukuran }}</span> cm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tersisa</td>
+                                                    <td><span>{{ $product->stok }}</span> Produk</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Deskripsi</td>
+                                                    <td><span>{{ $product->deskripsi }}</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <a class="close-btn popup-close" href="#">x</a>
                             </div>
-                            <div class="card-body">
-
-                                <p class="card-title-k d-inline-block">Koi Ochiba Sigure</p>
-
-
-                                <div class="harga">
-                                    <img class="icon" src="{{ asset('img/money.png') }}">
-                                    <p class="text-icon">Rp <span>400,000</span></p>
-                                </div>
-
-                                <div class="stok">
-                                    <img class="icon" src="{{ asset('img/box.png') }}">
-                                    <p class="text-icon">Tersedia <span> 3 </span> Produk</p>
-                                </div>
-
-                                <div class="rating">
-                                    <img class="icon" src="{{ asset('img/stars.png') }}">
-                                    <p class="text-icon">Rating : <span> 4.8 </span>/5</p>
-                                </div>
-                                <div class="btn-bottom btn_bookmark">
-                                    <img class="d-inline-block" src="{{ asset('img/info.png') }}" width="32px"
-                                        height="32px">
-                                    <a class="d-inline-block popup-btn" href="#">Detail</a>
-                                </div>
-                                <div class="btn-bottom btn_cart">
-                                    <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
-                                        height="32px">
-                                    <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
-                                </div>
-                            </div>
-                        </div>
-
+                        </div> --}}
+                        @endforeach
                     </div>
                 </div>
             </div>

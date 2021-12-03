@@ -39,7 +39,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'jenis' => 'required',
+            'ukuran' => 'required',
             'usia' => 'required',
             'harga' => 'required',
             'stok' => 'required',
@@ -94,7 +94,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'jenis' => 'required',
+            'ukuran' => 'required',
             'usia' => 'required',
             'harga' => 'required',
             'stok' => 'required',

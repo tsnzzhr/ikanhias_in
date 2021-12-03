@@ -9,5 +9,5 @@ class Ikanhias extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'jenis', 'usia', 'harga', 'stok', 'deskripsi', 'gambar'];
+    protected $fillable = ['nama', 'ukuran', 'usia', 'harga', 'stok', 'deskripsi', 'gambar'];
 }
