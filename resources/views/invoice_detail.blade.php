@@ -4,10 +4,56 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
 @section('content') 
 <div class="container mt-4 invoice-detail p-0">
     <h2 class="title" style="font-weight: 800;">Detail Invoice</h2>
+    <div class="card m-3">
+        <div class="row d-flex justify-content-between px-3 top">
+            <div class="tag-invoice">
+                <h5 class="font-weight-bold">ORDER : <span>#IKNHS00001</span></h5>
+                <p class="m-0">Estimasi Tiba : <span>22/11/21 15:30:00</span></p>
+            </div>
+        </div> <!-- Add class 'active' to progress -->
+        <div class="row d-flex justify-content-center">
+            <div class="col-12">
+                <ul id="progressbar" class="text-center">
+                    <li class="active step0"></li>
+                    <li class="active step0"></li>
+                    <li class="active step0"></li>
+                    <li class="step0"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-between top">
+            <div class="row d-flex icon-content"> 
+                <i class="icon fas fa-rocket"></i>
+                <div class="d-flex flex-column">
+                    <p class="font-weight-bold">Order<br>Diproses</p>
+                </div>
+            </div>
+            <div class="row d-flex icon-content">
+                <i class="icon fas fa-suitcase"></i>
+                <div class="d-flex flex-column">
+                    <p class="font-weight-bold">Order<br>Dikemas</p>
+                </div>
+            </div>
+            <div class="row d-flex icon-content">
+                <i class="icon fas fa-dolly-flatbed"></i>
+                <div class="d-flex flex-column">
+                    <p class="font-weight-bold">Order<br>Dikirim</p>
+                </div>
+            </div>
+            <div class="row d-flex icon-content">
+                <i class="icon fas fa-people-carry"></i>
+                <div class="d-flex flex-column">
+                    <p class="font-weight-bold">Order<br>Diterima</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row invoice-dtl mt-5 ml-0 mr-0">
         <div class="col">
             <h3>Detail Belanja</h3>
@@ -76,6 +122,7 @@
             </table>
         </div>
     </div>
+    
             
     <div class="tombol">
         <a href="{{  url('invoice') }}">Kembali</a>

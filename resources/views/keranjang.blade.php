@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <a class="btn btn-cekout m-3 text-center" href="{{ url('/checkout')}}" title="Checkout">
+        <a class="btn btn-cekout mt-3 mb-1 text-center" href="{{ url('/checkout')}}" title="Checkout">
             <img class="icons d-inline mx-auto my-auto" src="{{ asset('img/cekout.png') }}">
             <p class="d-inline">Checkout</p>
         </a>

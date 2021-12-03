@@ -12,22 +12,19 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Edit Informasi Akun</h4>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Nama</label><input type="text" class="form-control" placeholder="Nama" value=""></div>
-                    <div class="col-md-6"><label class="labels">Username</label><input type="text" class="form-control" value="" placeholder="Username"></div>
-                </div>
                 <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Nama</label><input type="text" class="form-control" placeholder="Nama" value=""></div>
                     <div class="col-md-12"><label class="labels">Nomor Telepon</label><input type="text" class="form-control" placeholder="Nomor Telepon" value=""></div>
                     <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="Email" value=""></div>
                     <div class="col-md-12"><label class="labels">Alamat</label><input type="text" class="form-control" placeholder="Alamat" value=""></div>
                 </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                <div class="mt-5 text-center"><a class="btn profile-a" href="{{  url('dashboard_cust') }}" type="button">Save Profile</a></div>
             </div>
         </div>
         <div class="col-md-3 p-3 py-5">
             <h4>Atur Ulang Password</h4>
-            <div class="col-md-12"><label class="labels">Password Baru</label><input type="text" class="form-control" value=""></div>
-            <div class="col-md-12"><label class="labels">Konfirmasi Password Baru</label><input type="text" class="form-control" value=""></div>
+            <div class="col-md-12"><label class="labels">Password Baru</label><input type="password" class="form-control" value=""></div>
+            <div class="col-md-12"><label class="labels">Konfirmasi Password Baru</label><input type="password" class="form-control" value=""></div>
         </div>
     </div>
 </div>

@@ -33,6 +33,10 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->middleware('auth'
 
 Route::get('/edit_customer', [EditCustomerController::class, 'index'])->middleware('auth');
 
+Route::get('/dashboard_cust', function () {
+    return view('dashboard_cust');
+});
+
 
 // Admin
 

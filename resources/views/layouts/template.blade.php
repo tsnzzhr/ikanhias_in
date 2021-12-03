@@ -95,7 +95,7 @@
 
                 <div class="navbar-nav mr-2">
                     <input id="search-focus" type="search" class="form-control rounded" placeholder="Cari Produk"
-                        aria-label="Search" aria-describedby="search-addon" style="width:450px !important" />
+                        aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
                     <span class="btn input-group-text border-0 ml-2" id="search-addon">
                         <i class="bi bi-search"></i>
                     </span>
@@ -119,13 +119,13 @@
                         @endif
                     @else
                         <!-- Authentication Links -->
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="/keranjang" style="text-align: center">Keranjang</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="/invoice" style="text-align: center">Invoice</a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -140,7 +140,7 @@
                                     {{ __('Dashboard') }}
                                 </a>
                                 @else
-                                <a class="dropdown-item" href="/edit_customer" onclick="">
+                                <a class="dropdown-item" href="{{ url('dashboard_cust') }}" onclick="">
                                     {{ __('Akun') }}
                                 </a>
                                 @endif

@@ -205,21 +205,24 @@
             padding: 90px;
             z-index: 10;
             text-align: center;
-            background: rgba(255, 255, 255, 0);
+            background: rgba(0, 0, 0, 0);
             border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px black;
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
         }
 
         .desc h1 {
+            color: #415A77;
             font-weight: 800;
+            -webkit-text-stroke: #fff  1px;
         }
 
         .desc p {
             font-size: 20px;
+            -webkit-text-stroke: black 0.1px;
         }
 
         .hl{
@@ -267,15 +270,15 @@
 
         <div class="carousel-inner">
             <div class="item active">
-                <a href="#"><img src="http://source.unsplash.com/_-KTbvt9IkQ/1600x800" /></a>
+                <a href="#"><img src="http://source.unsplash.com/URaZrRvKQqM/1600x900" /></a>
                 <div class="desc">
                     <h1>Ikanhias.in Aja!</h1>
-                    <p>Cari ikan dan aquarium-care berkualitas, bervariatif, aman terpercaya, anti-ribet dan cepat</p>
+                    <p>Cari ikan pilihan yang berkualitas, variatif, aman dan anti-ribet sekarang!</p>
                 </div>
 
             </div>
             <div class="item">
-                <a href="#"><img src="https://source.unsplash.com/ZV8OoFZ1nRc/1600x800"></a>
+                <a href="#"><img src="https://source.unsplash.com/v-e1a5THkwQ/1600x800"></a>
                 <div class="desc">
                     <h1>Mengapa Ikanhias.in?</h1>
                     <p>Tidak perlu repot datang ke outlet, cukup checkout melalui aplikasi dan tunggu pesananmu datang</p>
@@ -304,46 +307,33 @@
             <div class="w-60">
                 <div class="sidebar">
                     <h5><b>Urut Berdasarkan :</b></h5>
+                    <h5>Harga</h5>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio1" checked>
-                        <label class="form-check-label" for="flexRadio1">
-                           Rating Terbaik
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                         Terendah
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio2">
-                        <label class="form-check-label" for="flexRadio2">
-                            Produk Terbaru
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                         Tertinggi
                         </label>
                     </div>
+                    <h5>Rating</h5>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio3">
-                        <label class="form-check-label" for="flexRadio2">
-                            Penjualan Terbanyak
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label" for="flexRadioDefault3">
+                         Terbaik
                         </label>
-                    </div>
-                </div>
-
-                <div class="sidebar">
-                    <h5><b>Kategori :</b></h5>
+                      </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Ikan Hias
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                        <label class="form-check-label" for="flexRadioDefault4">
+                         Terburuk
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Obat dan Perawatan
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Aksesoris
-                        </label>
-                    </div>
+                   
                 </div>
             </div>
             <div class="col katalog">

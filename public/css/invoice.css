@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 :root {
     --dazzle: #415a77;
     --soft: #778da9;
@@ -75,4 +76,127 @@
 .invoice-detail .tombol{
     float: right;
     margin:20px;
+}
+
+.invoice-detail .card {
+    z-index: 0;
+    background-color: #ECEFF1;
+    padding-bottom: 20px;
+    border-radius: 10px
+}
+
+.invoice-detail .top {
+    padding-top: 40px;
+    padding-left: 13% !important;
+    padding-right: 13% !important
+}
+
+.invoice-detail #progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: #455A64;
+    padding-left: 0px;
+    margin-top: 30px
+}
+
+.invoice-detail #progressbar li {
+    list-style-type: none;
+    font-size: 13px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+.invoice-detail #progressbar .step0:before {
+    font-family: FontAwesome;
+    content: "\f10c";
+    color: #fff
+}
+
+.invoice-detail #progressbar li:before {
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    background: var(--soft);
+    border-radius: 50%;
+    margin: auto;
+    padding: 0px
+}
+
+.invoice-detail #progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 12px;
+    background: var(--platinum);
+    position: absolute;
+    left: 0;
+    top: 16px;
+    z-index: -1
+}
+
+.invoice-detail #progressbar li:last-child:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    left: -50%
+}
+
+.invoice-detail #progressbar li:nth-child(2):after,
+.invoice-detail #progressbar li:nth-child(3):after {
+    left: -50%
+}
+
+.invoice-detail #progressbar li:first-child:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    left: 50%
+}
+
+.invoice-detail #progressbar li:last-child:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+
+.invoice-detail #progressbar li:first-child:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px
+}
+
+.invoice-detail #progressbar li.active:before,
+.invoice-detail #progressbar li.active:after {
+    background: var(--dazzle);
+}
+
+.invoice-detail #progressbar li.active:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+    color: white;
+}
+
+.invoice-detail .icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px
+}
+
+.invoice-detail .icon-content {
+    padding-bottom: 20px
+}
+
+@media screen and (max-width: 992px) {
+    .icon-content {
+        width: 50%
+    }
+}
+
+.invoice-detail .icon{
+    border-radius: 100%;
+    color :var(--dazzle) !important;
+    font-size: 50px;
+    height: 50px;
+    width:50px;
 }
