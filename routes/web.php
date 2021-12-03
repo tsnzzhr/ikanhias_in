@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\DashboardCust;
 use App\Http\Controllers\EditCustomerController;
+use App\Http\Controllers\EditPass;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KeranjangController;
@@ -31,12 +33,9 @@ Route::get('/detail-invoice', [InvoiceController::class, 'showDetail'])->middlew
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->middleware('auth');
 
-Route::get('/edit_customer', [EditCustomerController::class, 'index'])->middleware('auth');
+Route::get('/dashboard_cust', [DashboardCust::class, 'index'])->middleware('auth');
 
-Route::get('/dashboard_cust', function () {
-    return view('dashboard_cust');
-});
-
+Route::put('/edit_customer/edit_pass/{id}', [EditPass::class, 'update'])->middleware('auth');
 
 // Admin
 
@@ -52,4 +51,6 @@ Auth::routes();
 
 // Testing
 
-Route::resource('products', ProductController::class);
+Route::resource('products', ProductController::class)->middleware('auth');
+
+Route::resource('edit_customer', EditCustomerController::class)->middleware('auth');

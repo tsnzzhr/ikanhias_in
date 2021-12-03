@@ -9,7 +9,7 @@
     <h2>Akun Saya</h2>
     <div class="row rounded bg-white mt-3 mb-5">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><p>Halo, <span>Tsania</span>!</p></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><p>Halo, <span>{{ Auth::user()->name }}</span>!</p></div>
         </div>
         <div class="col-md-6 border-right">
             <div class="p-3 py-5">
@@ -17,10 +17,10 @@
                     <h4 class="text-right">Informasi Akun</h4>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Nama</label><p><span>Tsania AZ</span></p></div>
-                    <div class="col-md-12"><label class="labels">Nomor Telepon</label><p><span>+62 8123 45678</span></p></div>
-                    <div class="col-md-12"><label class="labels">Email</label><p><span>tsania123@gmail.com</span></p></div>
-                    <div class="col-md-12"><label class="labels">Alamat</label><p><span>Jl Teknik Kimia No 1</span></p></div>
+                    <div class="col-md-12"><label class="labels">Nama</label><p><span>{{ Auth::user()->name }}</span></p></div>
+                    <div class="col-md-12"><label class="labels">Nomor Telepon</label><p><span>{{ Auth::user()->phone }}</span></p></div>
+                    <div class="col-md-12"><label class="labels">Email</label><p><span>{{ Auth::user()->email }}</span></p></div>
+                    <div class="col-md-12"><label class="labels">Alamat</label><p><span>{{ Auth::user()->address }}</span></p></div>
                 </div>
                 <div class="mt-5 text-center"><a class="btn profile-a" href="{{ url('edit_customer') }}" type="a">Edit Akun</a></div>
             </div>
