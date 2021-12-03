@@ -2,11 +2,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+<script src="{{ asset('js/katalog.js') }}"></script>
 <title>Ikanhias.in</title>
 @section('content')
 
-<link href="{{ asset('css/katalog.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/katalog.css') }}" rel="stylesheet" />
     <style>
         .carousel-inner>.item>img,
         .carousel-inner>.item>a>img {
@@ -217,7 +217,7 @@
         .desc h1 {
             color: #415A77;
             font-weight: 800;
-            -webkit-text-stroke: #fff  1px;
+            -webkit-text-stroke: #fff 1px;
         }
 
         .desc p {
@@ -225,12 +225,77 @@
             -webkit-text-stroke: black 0.1px;
         }
 
-        .hl{
+        .hl {
             margin: 5% auto;
             align-self: center;
             width: 85%;
             height: 5px;
             background-color: #415A77;
+        }
+
+        .popup-wrap {
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            content: '';
+            background: rgba(65, 90, 119, 0.8);
+            backdrop-filter: blur(25px);
+            z-index: 20;
+        }
+
+        .popup-box {
+            max-height: 650px;
+            max-width: 600px;
+            padding: 50px;
+            transform: translate(-50%, -50%) scale(0.5);
+            position: relative;
+            top: 50%;
+            left: 50%;
+            box-shadow: 0px 2px 16px rgba(0, 0, 0);
+            border-radius: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .popup-box h3{
+            color:#415A77;
+        }
+
+        .popup-box .close-btn {
+            width: 35px;
+            height: 35px;
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            -webkit-transition: all ease 0.5s;
+            transition: all ease 0.5s;
+            border-radius: 100%;
+            background: #415A77;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            line-height: 200%;
+        }
+
+        .transform-in,
+        .transform-out {
+            display: block;
+            -webkit-transition: all ease 0.5s;
+            transition: all ease 0.5s;
+        }
+
+        .transform-in {
+            -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .transform-out {
+            -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
         }
 
         @media screen and (min-width: 768px) {
@@ -311,32 +376,72 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
-                         Terendah
+                            Terendah
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
-                         Tertinggi
+                            Tertinggi
                         </label>
                     </div>
                     <h5>Rating</h5>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                         <label class="form-check-label" for="flexRadioDefault3">
-                         Terbaik
+                            Terbaik
                         </label>
-                      </div>
+                    </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
                         <label class="form-check-label" for="flexRadioDefault4">
-                         Terburuk
+                            Terburuk
                         </label>
                     </div>
-                   
+
                 </div>
             </div>
             <div class="col katalog">
+                <div class="popup-wrap">
+                    <div class="popup-box">
+                        <style>
+                            .my-image{
+                                width: 12rem;
+                                height: 12rem;
+                                border-radius: 20px;
+                            }
+                        </style>
+                        <img class="my-image" src="{{ asset('img/chinsurin.jpg') }}" />
+                        <div class="desc-text text-left m-2">
+                            <h3 class="text-center"><span>Koi Chinshurin</span></h3>
+                            <table class="table table-striped flex">
+                                <tbody>
+                                    <tr>
+                                        <td>Harga</td>
+                                        <td><span>Rp150,000</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Usia</td>
+                                        <td><span>5</span> Bulan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ukuran</td>
+                                        <td><span>20</span> cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tersisa</td>
+                                        <td><span>5</span> Produk</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deskripsi</td>
+                                        <td><span>Kondisi Sehat. Ikan Air Tawar. Jauhkan Dari Jangkauan Kucing.</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a class="close-btn popup-close" href="#">x</a>
+                    </div>
+                </div>
                 <div class="vl">
                     <div class="card-group d-flex align-items-stretch">
                         <div class="card card-item m-2">
@@ -370,7 +475,7 @@
                                 <div class="btn-bottom btn_cart">
                                     <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
                                         height="32px">
-                                    <a class="d-inline-block" href="{{ url('/keranjang')  }}">+ Keranjang</a>
+                                    <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
                                 </div>
                             </div>
                         </div>
@@ -389,7 +494,7 @@
 
                                 <div class="stok">
                                     <img class="icon" src="{{ asset('img/box.png') }}">
-                                    <p class="text-icon">Tersedia <span> 8 </span>  Produk</p>
+                                    <p class="text-icon">Tersedia <span> 8 </span> Produk</p>
                                 </div>
 
                                 <div class="rating">
@@ -399,12 +504,12 @@
                                 <div class="btn-bottom btn_bookmark">
                                     <img class="d-inline-block" src="{{ asset('img/info.png') }}" width="32px"
                                         height="32px">
-                                    <a class="d-inline-block" href="#">Detail</a>
+                                    <a class="d-inline-block popup-btn" href="#">Detail</a>
                                 </div>
                                 <div class="btn-bottom btn_cart">
                                     <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
                                         height="32px">
-                                    <a class="d-inline-block" href="{{ url('/keranjang')  }}">+ Keranjang</a>
+                                    <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
                                 </div>
                             </div>
                         </div>
@@ -434,12 +539,12 @@
                                 <div class="btn-bottom btn_bookmark">
                                     <img class="d-inline-block" src="{{ asset('img/info.png') }}" width="32px"
                                         height="32px">
-                                    <a class="d-inline-block" href="#">Detail</a>
+                                    <a class="d-inline-block popup-btn" href="#">Detail</a>
                                 </div>
                                 <div class="btn-bottom btn_cart">
                                     <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
                                         height="32px">
-                                    <a class="d-inline-block" href="{{ url('/keranjang')  }}">+ Keranjang</a>
+                                    <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
                                 </div>
                             </div>
                         </div>
@@ -448,6 +553,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection
