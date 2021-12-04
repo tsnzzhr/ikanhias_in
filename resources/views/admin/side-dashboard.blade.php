@@ -110,13 +110,19 @@
                     </form>
                 </div> --}}
                 <li class="nav-item">
-                    <form action="{{ route('logout') }}" method="post">
+                    <div class="m-2" style="color: aliceblue">
+                        Back 
+                        <a href="{{ url('/') }}" class="ml-2">
+                            <i class="fas fa-sign-out-alt" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout"></i>
+                        </a>
+                    </div>
+                    {{-- <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button class="btn mt-2">
                             <i class="fas fa-sign-out-alt" data-bs-toggle="tooltip" data-bs-placement="bottom"
                             title="Logout"></i>
                         </button>
-                    </form>
+                    </form> --}}
                 </li>
             </ul>
         </nav>
@@ -150,13 +156,13 @@
                    with font-awesome or any other icon font library -->
                         <li class="nav-header">SELAMAT DATANG ADMIN</li>
                         <li class="nav-item">
-                            <a href="{{ url('/products') }}" class="nav-link">
+                            <a href="{{ url('products') }}" class="nav-link">
                                 <i class="nav-icon ion ion-bag"></i>
                                 <p>Produk</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{ url('invoice_proses') }}" class="nav-link">
                                 <i class="nav-icon fas fa-shopping-cart"></i>
                                 <p>
                                     Pesanan
@@ -165,17 +171,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{ url('transaksi_invoice') }}" class="nav-link">
                                 <i class="nav-icon ion ion-pie-graph"></i>
                                 <p>Transaksi</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="nav-icon ion ion-person"></i>
                                 <p>Pelanggan</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
