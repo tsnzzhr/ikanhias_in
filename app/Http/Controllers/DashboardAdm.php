@@ -14,4 +14,9 @@ class DashboardAdm extends Controller
             'products' => $product
         ]);
     }
+
+    public function viewTransaksi()
+    {
+        return view('admin.transaksi');
+    }
 }

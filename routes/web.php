@@ -28,8 +28,6 @@ Route::get('/search', [HomeController::class, 'search']);
 
 Route::get('/sort', [HomeController::class, 'sort']);
 
-// Customer 
-
 Route::get('/keranjang', [KeranjangController::class, 'index'])->middleware('auth');
 
 Route::get('/invoice', [InvoiceController::class, 'index'])->middleware('auth');
@@ -42,22 +40,13 @@ Route::get('/dashboard_cust', [DashboardCust::class, 'index'])->middleware('auth
 
 Route::put('/edit_customer/edit_pass/{id}', [EditPass::class, 'update'])->middleware('auth');
 
-// Admin
+Route::get('/dashboard', [DashboardAdm::class, 'index'])->middleware('auth');
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
-
-Route::get('/dashboard', [DashboardAdm::class, 'index']);
-
-Route::get('/transaksi_invoice', function () {
-    return view('admin.transaksi');
-});
+Route::get('/transaksi_invoice', [DashboardAdm::class, 'viewTransaksi'])->middleware('auth');
 
 Route::get('/invoice_proses', function () {
     return view('admin.pesanan');
-});
-
+})->middleware('auth');
 
 Auth::routes();
 
