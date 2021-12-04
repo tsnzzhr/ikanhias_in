@@ -426,9 +426,18 @@
                                     <div class="btn-bottom btn_cart">
                                         <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
                                         height="32px">
+                                        {{-- <a href="{{ url('/keranjang' . '/' . $product->id) }}" onclick="event.preventDefault();
+                                            document.getElementById('addToCart').submit();">
+                                            {{ __('+ Keranjang') }}
+                                        </a>
+
+                                        <form id="addToCart" action="{{ url('/keranjang' . '/' . $product->id) }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form> --}}
                                         <form action="{{ url('/keranjang' . '/' . $product->id) }}" method="post">
                                             @csrf
-                                            <button class="d-inline-block">+ Keranjang</button>
+                                            <button class="btn" type="submit">+ Keranjang</button>
                                         </form>
                                     </div>
                                     @endif
@@ -436,6 +445,15 @@
                                 <div class="btn-bottom btn_cart">
                                     <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
                                     height="32px">
+                                    {{-- <a href="{{ url('/keranjang' . '/' . $product->id) }}" onclick="event.preventDefault();
+                                                document.getElementById('addToCart').submit();">
+                                        {{ __('+ Keranjang') }}
+                                    </a>
+
+                                    <form id="addToCart" action="{{ url('/keranjang' . '/' . $product->id) }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form> --}}
                                     <form action="{{ url('/keranjang' . '/' . $product->id) }}" method="post">
                                         @csrf
                                         <button class="btn" type="submit">+ Keranjang</button>

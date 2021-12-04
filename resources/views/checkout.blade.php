@@ -9,53 +9,34 @@
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-muted">Keranjang Belanja</span>
-                    <span class="badge badge-secondary badge-pill">3</span>
+                    {{-- <span class="badge badge-secondary badge-pill">3</span> --}}
                 </h4>
                 <ul class="list-group mb-3">
+                    <?php $total = 0 ?>
+                    @if(session('cart'))
+                    @foreach(session('cart') as $id => $details)
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">Arwana Merah</h6>
-                            <small class="text-muted">4,000,000</small>
+                            <h6 class="my-0">{{ $details['nama'] }}</h6>
+                            <small class="text-muted">{{ $details['harga'] }}</small>
                         </div>
-                        <span class="text-muted">1</span>
+                        <span class="text-muted">{{ $details['jumlah'] }}</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Koi Maruten Sanke</h6>
-                            <small class="text-muted">700,000</small>
-                        </div>
-                        <span class="text-muted">2</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Koi Asagi</h6>
-                            <small class="text-muted">5,000,000</small>
-                        </div>
-                        <span class="text-muted">1</span>
-                    </li>
+                    <?php $total += $details['jumlah'] * $details['harga'] ?>
+                    @endforeach
+                    @endif
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total</span>
-                        <strong>10,400,000</strong>
+                        <strong>{{ $total }}</strong>
                     </li>
                 </ul>
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Data Order Pembelian</h4>
-                <form class="needs-validation" novalidate>
+                {{-- <form class="needs-validation" novalidate> --}}
                     <div class="mb-3">
-                        <label for="address">Pilih Alamat Tujuan Pengiriman</label>
-                        <select class="form-control" aria-label="Default select example">
-                            <option selected>Alamat Pengiriman</option>
-                            <option value="1">Jl Teknik Kimia No.1</option>
-                            <option value="2">Jl Dharmahusada Indah No.1</option>
-                            <option value="3">Manyar Tompotika No.1</option>
-                        </select>
-                        
-                        <p>Tambahkan Alamat Baru?</p>
-                        <input type="text" class="form-control" id="address" placeholder="Alamat Penerima" required>
-                        <div class="invalid-feedback">
-                            Inputkan Tujuan Pengiriman.
-                        </div>
+                        <label for="address">Alamat Tujuan Pengiriman</label>
+                        <div>{{ Auth::user()->address }}</div>
                     </div>
                     <h4 class="mb-3">Payment</h4>
 
@@ -72,8 +53,12 @@
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <a class="btn btn-primary btn-lg btn-block" href="{{ url('/invoice') }}" type="submit">Checkout</a>
-                </form>
+                    <form action="/checkoutGuys" method="post">
+                        @csrf
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Checkout</button>
+                    </form>
+                    {{-- <a class="btn btn-primary btn-lg btn-block" href="{{ url('/invoice') }}" type="submit">Checkout</a> --}}
+                {{-- </form> --}}
             </div>
         </div>
 

@@ -32,11 +32,15 @@ Route::get('/keranjang', [KeranjangController::class, 'index'])->middleware('aut
 
 Route::post('/keranjang/{id}', [KeranjangController::class, 'addProduct'])->middleware('auth');
 
+Route::delete('/keranjang/{id}', [KeranjangController::class, 'remove'])->middleware('auth');
+
 Route::get('/invoice', [InvoiceController::class, 'index'])->middleware('auth');
 
 Route::get('/detail-invoice', [InvoiceController::class, 'showDetail'])->middleware('auth');
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->middleware('auth');
+
+Route::post('/checkoutGuys', [CheckoutController::class, 'checkoutGuys'])->middleware('auth');
 
 Route::get('/dashboard_cust', [DashboardCust::class, 'index'])->middleware('auth');
 
