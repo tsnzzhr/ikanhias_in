@@ -27,24 +27,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css" />
-    <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" />
-    <!-- iCheck -->
-    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="../../plugins/jqvmap/jqvmap.min.css" />
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css" />
-    <!-- summernote -->
-    <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css" />
+    
     <link rel="stylesheer" href="{{ asset('css/app.css') }}" />
 </head>
 <div class="m-0 hold-transition sidebar-mini layout-navbar-fixed">
@@ -59,7 +43,7 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
+                    <a href="{{ url('/')  }}" class="nav-link">Home</a>
                 </li>
             </ul>
 
@@ -138,7 +122,7 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ asset('img/avatar2.png')}}" class="img-circle elevation-2" alt="User Image" />
+                        <img src="{{ asset('img/profile.jpg')}}" class="img-circle elevation-2" alt="User Image" />
                     </div>
                     <div class="info">
                         <a href="#" class="d-block text-white">Admin Ikanhias.in</a>
