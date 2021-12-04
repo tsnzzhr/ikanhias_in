@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ikanhias | Admin</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
 
@@ -53,20 +56,20 @@
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-light" style="background-color: #8a9ea7">
             <!-- Left navbar links -->
-            <ul class="navbar-nav">
+            {{-- <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                    <a class="nav-link" data-widget="pushmenu" href="" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="../../index3.html" class="nav-link">Home</a>
                 </li>
-            </ul>
+            </ul> --}}
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                         <i class="fas fa-search" data-bs-toggle="tooltip" data-bs-placement="bottom" title="cari"></i>
                     </a>
@@ -86,9 +89,9 @@
                             </div>
                         </form>
                     </div>
-                </li>
+                </li> --}}
                 <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell" data-bs-toggle="tooltip" data-bs-placement="bottom"
                             title="notifikasi"></i>
@@ -114,21 +117,31 @@
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
-                </li>
+                </li> --}}
+                {{-- <div>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                        class="d-none">
+                        @csrf
+                        <button class="btn" type="submit">Logout</button>
+                    </form>
+                </div> --}}
                 <li class="nav-item">
-                    <a class="nav-link" role="button">
-                        <i class="fas fa-sign-out-alt" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            title="keluar"></i>
-                    </a>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button class="btn mt-2">
+                            <i class="fas fa-sign-out-alt" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="Logout"></i>
+                        </button>
+                    </form>
                 </li>
             </ul>
         </nav>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed">
             <!-- Brand Logo -->
-            <a href="#" class="brand-link elevation-3">
+            <a href="{{ url('/dashboard') }}" class="brand-link elevation-3">
                 <img src="{{ asset('img/logo.png') }}" alt="Ikanhias" class="brand-image elevation-3"
                     style="opacity: 0.8; width:90%;" />
             </a>
@@ -141,7 +154,7 @@
                         <img src="{{ asset('img/avatar2.png')}}" class="img-circle elevation-2" alt="User Image" />
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block text-white">Admin Ikanhias.in</a>
+                        <a class="d-block text-white">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
@@ -153,7 +166,7 @@
                    with font-awesome or any other icon font library -->
                         <li class="nav-header">SELAMAT DATANG ADMIN</li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{ url('/products') }}" class="nav-link">
                                 <i class="nav-icon ion ion-bag"></i>
                                 <p>Produk</p>
                             </a>
@@ -163,7 +176,7 @@
                                 <i class="nav-icon fas fa-shopping-cart"></i>
                                 <p>
                                     Pesanan
-                                    <span class="badge badge-info right">2</span>
+                                    {{-- <span class="badge badge-info right">2</span> --}}
                                 </p>
                             </a>
                         </li>
@@ -187,7 +200,7 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="height: auto">
             <!-- Content Header (Page header) -->
 
             <!-- Main content (konten taruh sini san)-->

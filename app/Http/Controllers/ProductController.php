@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Ikanhias::latest()->paginate(5);
+        $products = Ikanhias::latest()->paginate(100);
         return view('products.index', compact('products'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

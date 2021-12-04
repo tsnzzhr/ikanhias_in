@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\DashboardAdm;
 use App\Http\Controllers\DashboardCust;
 use App\Http\Controllers\EditCustomerController;
 use App\Http\Controllers\EditPass;
@@ -43,13 +44,11 @@ Route::put('/edit_customer/edit_pass/{id}', [EditPass::class, 'update'])->middle
 
 // Admin
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
+Route::get('/dashboard', [DashboardAdm::class, 'index']);
 
 Route::get('/transaksi_invoice', function () {
     return view('admin.transaksi');
