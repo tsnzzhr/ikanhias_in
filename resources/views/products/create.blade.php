@@ -35,8 +35,8 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Jenis:</strong>
-                <input type="text" name="jenis" class="form-control" placeholder="Jenis">
+                <strong>Ukuran:</strong>
+                <input type="text" name="ukuran" class="form-control" placeholder="Ukuran">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

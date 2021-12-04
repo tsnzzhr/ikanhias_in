@@ -23,7 +23,7 @@
             <th>ID</th>
             <th>Gambar</th>
             <th>Nama</th>
-            <th>Jenis</th>
+            <th>Ukuran</th>
             <th>Usia</th>
             <th>Harga</th>
             <th>Stok</th>
@@ -35,7 +35,7 @@
             <td>{{ ++$i }}</td>
             <td><img src="/imgProduct/{{ $product->gambar }}" width="100px"></td>
             <td>{{ $product->nama }}</td>
-            <td>{{ $product->jenis }}</td>
+            <td>{{ $product->ukuran }}</td>
             <td>{{ $product->usia }}</td>
             <td>{{ $product->harga }}</td>
             <td>{{ $product->stok }}</td>

@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
-class EditCustomerController extends Controller
+class EditPass extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        return view('edit_customer');
+        //
     }
 
     /**
@@ -46,9 +46,9 @@ class EditCustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('edit_customer');
+        //
     }
 
     /**
@@ -74,17 +74,16 @@ class EditCustomerController extends Controller
         $user = Auth::user();
 
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'address' => 'required',
+            'password' => ['required', 'confirmed']
         ]);
 
-        $input = $request->only('name', 'email', 'phone', 'address');
+        $input = $request->only('password');
+        $input['password'] = Hash::make($input['password']);
 
         $user->update($input);
 
         return redirect('/dashboard_cust')->with('success', 'Profile updated successfully');
+        // return $lalala;
     }
 
     /**

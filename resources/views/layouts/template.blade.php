@@ -93,12 +93,16 @@
                     </a>
                 </div>
 
-                <div class="navbar-nav mr-2">
-                    <input id="search-focus" type="search" class="form-control rounded" placeholder="Cari Produk"
-                        aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
-                    <span class="btn input-group-text border-0 ml-2" id="search-addon">
-                        <i class="bi bi-search"></i>
-                    </span>
+                <div class="navbar-nav mr-2 d-flex flex-row">
+                    <form action="{{ url('/search') }}" method="get">
+                        @csrf
+                        <div class="d-flex flex-row">
+
+                            <input id="search-focus" name="search" type="search" class="form-control rounded" placeholder="Cari Produk"
+                            aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
+                            <button type="submit" class="btn ml-2"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
                 </div>
 
                 <!-- Right Side Of Navbar -->
@@ -119,13 +123,13 @@
                         @endif
                     @else
                         <!-- Authentication Links -->
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="/keranjang" style="text-align: center">Keranjang</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="/invoice" style="text-align: center">Invoice</a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -136,7 +140,13 @@
                             <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
                                 
                                 @if (auth()->user()->email == 'admin@admin.com')
+<<<<<<< HEAD
                                 <a class="dropdown-item" href="{{ url('dashboard') }}" onclick="">
+||||||| 6aebfee
+                                <a class="dropdown-item" href="#" onclick="">
+=======
+                                <a class="dropdown-item" href="/products" onclick="">
+>>>>>>> bed537a0cbec69c5539092ac992a91af6303564d
                                     {{ __('Dashboard') }}
                                 </a>
                                 @else
