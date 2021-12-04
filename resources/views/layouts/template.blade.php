@@ -136,7 +136,7 @@
                             <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
                                 
                                 @if (auth()->user()->email == 'admin@admin.com')
-                                <a class="dropdown-item" href="#" onclick="">
+                                <a class="dropdown-item" href="{{ url('dashboard') }}" onclick="">
                                     {{ __('Dashboard') }}
                                 </a>
                                 @else

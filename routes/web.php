@@ -44,6 +44,15 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/transaksi_invoice', function () {
+    return view('admin.transaksi');
+});
+
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
