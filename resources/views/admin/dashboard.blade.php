@@ -34,7 +34,6 @@
   <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css" />
   <!-- summernote -->
   <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css" />
-  </head>
   <div class="container hold-transition sidebar-mini layout-navbar-fixed">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -90,7 +89,7 @@
                   <div class="icon">
                     <i class="fas fa-shopping-cart"></i>
                   </div>
-                  <a href="#" class="small-box-footer"
+                  <a href="{{ url('/invoice_proses')}}" class="small-box-footer"
                     >Kunjungi <i class="fas fa-arrow-circle-right"></i
                   ></a>
                 </div>

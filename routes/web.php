@@ -44,6 +44,10 @@ Route::get('/dashboard', [DashboardAdm::class, 'index'])->middleware('auth');
 
 Route::get('/transaksi_invoice', [DashboardAdm::class, 'viewTransaksi'])->middleware('auth');
 
+Route::get('/invoice_proses', function () {
+    return view('admin.pesanan');
+})->middleware('auth');
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
