@@ -93,12 +93,16 @@
                     </a>
                 </div>
 
-                <div class="navbar-nav mr-2">
-                    <input id="search-focus" type="search" class="form-control rounded" placeholder="Cari Produk"
-                        aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
-                    <span class="btn input-group-text border-0 ml-2" id="search-addon">
-                        <i class="bi bi-search"></i>
-                    </span>
+                <div class="navbar-nav mr-2 d-flex flex-row">
+                    <form action="{{ url('/search') }}" method="get">
+                        @csrf
+                        <div class="d-flex flex-row">
+
+                            <input id="search-focus" name="search" type="search" class="form-control rounded" placeholder="Cari Produk"
+                            aria-label="Search" aria-describedby="search-addon" style="width:550px !important" />
+                            <button type="submit" class="btn ml-2"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
                 </div>
 
                 <!-- Right Side Of Navbar -->

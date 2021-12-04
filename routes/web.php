@@ -23,6 +23,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/search', [HomeController::class, 'search']);
+
+Route::get('/sort', [HomeController::class, 'sort']);
+
 // Customer 
 
 Route::get('/keranjang', [KeranjangController::class, 'index'])->middleware('auth');

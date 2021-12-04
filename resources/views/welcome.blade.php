@@ -373,18 +373,22 @@
                 <div class="sidebar">
                     <h5><b>Urut Berdasarkan :</b></h5>
                     <h5>Harga</h5>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Terendah
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Tertinggi
-                        </label>
-                    </div>
+                    <form action="{{ url('/sort') }}" method="get">
+                        @csrf
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sort" id="sortAsc1" value="0">
+                            <label class="form-check-label" for="sortAsc1">
+                                Terendah
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sort" id="sortDesc2" value="1">
+                            <label class="form-check-label" for="sortDesc2">
+                                Tertinggi
+                            </label>
+                        </div>
+                        <button class="btn" type="submit">Sort</button>
+                    </form>
                 </div>
             </div>
             
