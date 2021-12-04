@@ -54,6 +54,10 @@ Route::get('/transaksi_invoice', function () {
     return view('admin.transaksi');
 });
 
+Route::get('/invoice_proses', function () {
+    return view('admin.pesanan');
+});
+
 
 Auth::routes();
 
