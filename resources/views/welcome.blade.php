@@ -411,7 +411,6 @@
                                         <p class="text-icon">Rp <span>{{ $product->harga }}</span></p>
                                     </div>
 
-<<<<<<< HEAD
                                     <div class="stok">
                                         <img class="icon" src="{{ asset('img/box.png') }}">
                                         <p class="text-icon">Tersedia <span> {{ $product->stok }} </span> Produk</p>
@@ -422,40 +421,7 @@
                                             height="32px">
                                         <a class="d-inline-block popup-btn-{{ $product->id }}" href="#">Detail</a>
                                     </div>
-                                    <div class="btn-bottom btn_cart">
-                                        <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
-                                            height="32px">
-                                        <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
-                                    </div>
-                                </div>
-||||||| 975b140
-                                <div class="stok">
-                                    <img class="icon" src="{{ asset('img/box.png') }}">
-                                    <p class="text-icon">Tersedia <span> {{ $product->stok }} </span> Produk</p>
-                                </div>
-                                
-                                <div class="btn-bottom btn_bookmark">
-                                    <img class="d-inline-block" src="{{ asset('img/info.png') }}" width="32px"
-                                        height="32px">
-                                    <a class="d-inline-block popup-btn-{{ $product->id }}" href="#">Detail</a>
-                                </div>
-                                <div class="btn-bottom btn_cart">
-                                    <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
-                                        height="32px">
-                                    <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
-                                </div>
-=======
-                                <div class="stok">
-                                    <img class="icon" src="{{ asset('img/box.png') }}">
-                                    <p class="text-icon">Tersedia <span> {{ $product->stok }} </span> Produk</p>
-                                </div>
-                                
-                                <div class="btn-bottom btn_bookmark">
-                                    <img class="d-inline-block" src="{{ asset('img/info.png') }}" width="32px"
-                                        height="32px">
-                                    <a class="d-inline-block popup-btn-{{ $product->id }}" href="#">Detail</a>
-                                </div>
-                                @if (Auth::user())
+                                    @if (Auth::user())
                                     @if (auth()->user()->email != 'admin@admin.com')
                                     <div class="btn-bottom btn_cart">
                                         <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
@@ -476,7 +442,7 @@
                                     </form>
                                 </div>
                                 @endif
->>>>>>> 05e35615ab9843814cc5a9b60b3a6840973904c1
+                                </div>
                             </div>
                             <div class="popup-wrap-{{ $product->id }}" style="width: 100%;
                                     height: 100%;
@@ -576,20 +542,7 @@
                                     //let myImage = document.getElementsByClassName('my-image')[0];
                                     //myImage.setAttribute('src', '[VALUE HERE]');
                                 });
-<<<<<<< HEAD
                             </script>
-||||||| 975b140
-
-                                //let myImage = document.getElementsByClassName('my-image')[0];
-                                //myImage.setAttribute('src', '[VALUE HERE]');
-                            });
-
-                        </script>
-=======
-                            });
-
-                        </script>
->>>>>>> 05e35615ab9843814cc5a9b60b3a6840973904c1
                         @endforeach
                     </div>
                 </div>
