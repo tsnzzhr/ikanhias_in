@@ -222,7 +222,9 @@
 
         .desc p {
             font-size: 20px;
-            -webkit-text-stroke: black 0.1px;
+            color: #415A77;
+            font-weight: bold;
+            -webkit-text-stroke: #fff 0.2px;
         }
 
         .hl {
@@ -260,8 +262,8 @@
             text-align: center;
         }
 
-        .popup-box h3{
-            color:#415A77;
+        .popup-box h3 {
+            color: #415A77;
         }
 
         .popup-box .close-btn {
@@ -335,7 +337,7 @@
 
         <div class="carousel-inner">
             <div class="item active">
-                <a href="#"><img src="http://source.unsplash.com/URaZrRvKQqM/1600x900" /></a>
+                <a href="#"><img src="{{ asset('img/home.png')}}" /></a>
                 <div class="desc">
                     <h1>Ikanhias.in Aja!</h1>
                     <p>Cari ikan pilihan yang berkualitas, variatif, aman dan anti-ribet sekarang!</p>
@@ -343,14 +345,14 @@
 
             </div>
             <div class="item">
-                <a href="#"><img src="https://source.unsplash.com/v-e1a5THkwQ/1600x800"></a>
+                <a href="#"><img src="{{ asset('img/sea.jpg')}}"></a>
                 <div class="desc">
                     <h1>Mengapa Ikanhias.in?</h1>
                     <p>Tidak perlu repot datang ke outlet, cukup checkout melalui aplikasi dan tunggu pesananmu datang</p>
                 </div>
             </div>
             <div class="item">
-                <a href="#"><img src="http://source.unsplash.com/poly_hmhwJs/1600x800" /></a>
+                <a href="#"><img src="{{asset('img/rain.jpg')}}" /></a>
                 <div class="desc">
                     <h1>Keluhan, Tips dan Konsultasi?</h1>
                     <p>Chat admin dengan respon cepat anti-lelet saat jam kerja</p>
@@ -391,24 +393,58 @@
                     </form>
                 </div>
             </div>
-            
-            <div class="col katalog">  
+
+            <div class="col katalog">
                 <div class="vl">
                     <div class="card-group d-flex align-items-stretch">
                         @foreach ($products as $product)
-                        <div class="card card-item m-2">
-                            <div class="card-header bg-transparent">
-                                <img class="img-item" src="imgProduct/{{ $product->gambar }}">
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title-k d-inline-block" style="height: 80px">
-                                    <p>{{ $product->nama }}</p>
+                            <div class="card card-item m-2">
+                                <div class="card-header bg-transparent">
+                                    <img class="img-item" src="imgProduct/{{ $product->gambar }}">
                                 </div>
-                                <div class="harga">
-                                    <img class="icon" src="{{ asset('img/money.png') }}">
-                                    <p class="text-icon">Rp <span>{{ $product->harga }}</span></p>
-                                </div>
+                                <div class="card-body">
+                                    <div class="card-title-k d-inline-block" style="height: 80px">
+                                        <p>{{ $product->nama }}</p>
+                                    </div>
+                                    <div class="harga">
+                                        <img class="icon" src="{{ asset('img/money.png') }}">
+                                        <p class="text-icon">Rp <span>{{ $product->harga }}</span></p>
+                                    </div>
 
+<<<<<<< HEAD
+                                    <div class="stok">
+                                        <img class="icon" src="{{ asset('img/box.png') }}">
+                                        <p class="text-icon">Tersedia <span> {{ $product->stok }} </span> Produk</p>
+                                    </div>
+
+                                    <div class="btn-bottom btn_bookmark">
+                                        <img class="d-inline-block" src="{{ asset('img/info.png') }}" width="32px"
+                                            height="32px">
+                                        <a class="d-inline-block popup-btn-{{ $product->id }}" href="#">Detail</a>
+                                    </div>
+                                    <div class="btn-bottom btn_cart">
+                                        <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
+                                            height="32px">
+                                        <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
+                                    </div>
+                                </div>
+||||||| 975b140
+                                <div class="stok">
+                                    <img class="icon" src="{{ asset('img/box.png') }}">
+                                    <p class="text-icon">Tersedia <span> {{ $product->stok }} </span> Produk</p>
+                                </div>
+                                
+                                <div class="btn-bottom btn_bookmark">
+                                    <img class="d-inline-block" src="{{ asset('img/info.png') }}" width="32px"
+                                        height="32px">
+                                    <a class="d-inline-block popup-btn-{{ $product->id }}" href="#">Detail</a>
+                                </div>
+                                <div class="btn-bottom btn_cart">
+                                    <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
+                                        height="32px">
+                                    <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
+                                </div>
+=======
                                 <div class="stok">
                                     <img class="icon" src="{{ asset('img/box.png') }}">
                                     <p class="text-icon">Tersedia <span> {{ $product->stok }} </span> Produk</p>
@@ -440,106 +476,120 @@
                                     </form>
                                 </div>
                                 @endif
+>>>>>>> 05e35615ab9843814cc5a9b60b3a6840973904c1
                             </div>
-                        </div>
-                        <div class="popup-wrap-{{ $product->id }}" 
-                        style="width: 100%;
-                            height: 100%;
-                            display: none;
-                            position: absolute;
-                            top: 0px;
-                            left: 0px;
-                            content: '';
-                            background: rgba(65, 90, 119, 0.8);
-                            backdrop-filter: blur(25px);
-                            z-index: 20;">
-                            <div class="popup-box-{{ $product->id }}" 
-                            style="height: 1050px;
-                                width: 80%;
-                                padding: 80%;
-                                transform: translate(-50%, -50%) scale(0.5);
-                                position: relative;
-                                top: 50%;
-                                left: 50%;
-                                box-shadow: 0px 2px 16px rgba(0, 0, 0);
-                                border-radius: 20px;
-                                background: #fff;
-                                text-align: center;">
+                            <div class="popup-wrap-{{ $product->id }}" style="width: 100%;
+                                    height: 100%;
+                                    display: none;
+                                    position: absolute;
+                                    top: 0px;
+                                    left: 0px;
+                                    content: '';
+                                    background: rgba(65, 90, 119, 0.8);
+                                    backdrop-filter: blur(25px);
+                                    z-index: 20;">
+                                <div class="popup-box-{{ $product->id }}" style="
+                                        min-height: 500px;
+                                        max-width: 500px;
+                                        padding: 8%;
+                                        transform: translate(-50%, -50%);
+                                        position: relative;
+                                        top: 50%;
+                                        left: 50%;
+                                        box-shadow: 0px 2px 16px rgba(0, 0, 0);
+                                        border-radius: 20px;
+                                        background: #fff;
+                                        text-align: center;">
                                     <style>
-                                        .my-image{
-                                            width: 700px;
-                                            height: 700px;
+                                        .my-image {
+                                            width: 14rem;
+                                            height: 14rem;
                                             border-radius: 20px;
                                         }
 
                                     </style>
-                                    <div class="popup-container">
 
-                                        <img class="my-image" src="imgProduct/{{ $product->gambar }}" />
-                                        <div class="desc-text text-left m-2" style="width: 80%; height: 80%">
-                                            <h3 class="text-center" style="color:#415A77;"><span>{{ $product->nama }}</span></h3>
-                                            <table class="table table-striped flex">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Harga</td>
-                                                        <td><span>Rp {{ $product->harga }}</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Usia</td>
-                                                        <td><span>{{ $product->usia }}</span> Bulan</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Ukuran</td>
-                                                        <td><span>{{ $product->ukuran }}</span> cm</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tersisa</td>
-                                                        <td><span>{{ $product->stok }}</span> Produk</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Deskripsi</td>
-                                                        <td><span>{{ $product->deskripsi }}</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <a class="close-btn popup-close" href="#" 
-                                        style="width: 95px;
-                                        height: 95px;
-                                        display: inline-block;
-                                        position: absolute;
-                                        top: 20px;
-                                        right: 20px;
-                                        -webkit-transition: all ease 0.5s;
-                                        transition: all ease 0.5s;
-                                        border-radius: 100%;
-                                        background: #415A77;
-                                        font-size: 85px;
-                                        font-weight: bold;
-                                        text-decoration: none;
-                                        color: #fff;
-                                        line-height: 100%;">x</a>
-                                    </div>
+                                    <img class="my-image" src="imgProduct/{{ $product->gambar }}" />
+                                    <h3 class="text-center mt-3 mb-2" style="color:#415A77;">
+                                        <span>{{ $product->nama }}</span>
+                                    </h3>
+                                    <table class="table table-striped flex">
+                                        <tbody>
+                                            <tr>
+                                                <td>Harga</td>
+                                                <td><span>Rp {{ $product->harga }}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Usia</td>
+                                                <td><span>{{ $product->usia }}</span> Bulan</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ukuran</td>
+                                                <td><span>{{ $product->ukuran }}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tersisa</td>
+                                                <td><span>{{ $product->stok }}</span> Produk</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Deskripsi</td>
+                                                <td><span>{{ $product->deskripsi }}</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a class="close-btn popup-close" href="#" style="width:auto;
+                                            height: auto;
+                                            padding: 10px;
+                                            display: inline-block;
+                                            position: absolute;
+                                            top:20px;
+                                            right: 20px;
+                                            -webkit-transition: all ease 0.5s;
+                                            transition: all ease 0.5s;
+                                            border-radius: 20px;
+                                            background: #415A77;
+                                            font-size: 25px;
+                                            font-weight: bold;
+                                            text-decoration: none;
+                                            color: #fff;
+                                            line-height: 100%;">x</a>
+                                </div>
                             </div>
-                        </div>
-                        <script>
-                            $(document).ready(function () {
-                                $(".popup-btn-{!! json_encode($product->id, JSON_HEX_TAG) !!}").click(function (e) {
-                                    $(".popup-wrap-{!! json_encode($product->id, JSON_HEX_TAG) !!}").fadeIn(500);
-                                    $(".popup-box-{!! json_encode($product->id, JSON_HEX_TAG) !!}").removeClass("transform-out").addClass("transform-in");
+                            <script>
+                                $(document).ready(function() {
+                                    $(".popup-btn-{!! json_encode($product->id, JSON_HEX_TAG) !!}").click(function(e) {
+                                        $(".popup-wrap-{!! json_encode($product->id, JSON_HEX_TAG) !!}").fadeIn(500);
+                                        $(".popup-box-{!! json_encode($product->id, JSON_HEX_TAG) !!}").removeClass("transform-out").addClass(
+                                            "transform-in");
 
-                                    e.preventDefault();
+                                        e.preventDefault();
+                                    });
+
+                                    $(".popup-close").click(function(e) {
+                                        $(".popup-wrap-{!! json_encode($product->id, JSON_HEX_TAG) !!}").fadeOut(500);
+                                        $(".popup-box-{!! json_encode($product->id, JSON_HEX_TAG) !!}").removeClass("transform-in").addClass(
+                                            "transform-out");
+
+                                        e.preventDefault();
+                                    });
+
+                                    //let myImage = document.getElementsByClassName('my-image')[0];
+                                    //myImage.setAttribute('src', '[VALUE HERE]');
                                 });
+<<<<<<< HEAD
+                            </script>
+||||||| 975b140
 
-                                $(".popup-close").click(function (e) {
-                                    $(".popup-wrap-{!! json_encode($product->id, JSON_HEX_TAG) !!}").fadeOut(500);
-                                    $(".popup-box-{!! json_encode($product->id, JSON_HEX_TAG) !!}").removeClass("transform-in").addClass("transform-out");
-
-                                    e.preventDefault();
-                                });
+                                //let myImage = document.getElementsByClassName('my-image')[0];
+                                //myImage.setAttribute('src', '[VALUE HERE]');
                             });
 
                         </script>
+=======
+                            });
+
+                        </script>
+>>>>>>> 05e35615ab9843814cc5a9b60b3a6840973904c1
                         @endforeach
                     </div>
                 </div>
