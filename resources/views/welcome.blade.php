@@ -424,15 +424,21 @@
                                     <div class="btn-bottom btn_cart">
                                         <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
                                         height="32px">
-                                        <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
+                                        <form action="{{ url('/keranjang' . '/' . $product->id) }}" method="post">
+                                            @csrf
+                                            <button class="d-inline-block">+ Keranjang</button>
+                                        </form>
                                     </div>
                                     @endif
                                 @else
-                                    <div class="btn-bottom btn_cart">
-                                        <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
-                                        height="32px">
-                                        <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
-                                    </div>
+                                <div class="btn-bottom btn_cart">
+                                    <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
+                                    height="32px">
+                                    <form action="{{ url('/keranjang' . '/' . $product->id) }}" method="post">
+                                        @csrf
+                                        <button class="btn" type="submit">+ Keranjang</button>
+                                    </form>
+                                </div>
                                 @endif
                             </div>
                         </div>

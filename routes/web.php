@@ -30,6 +30,8 @@ Route::get('/sort', [HomeController::class, 'sort']);
 
 Route::get('/keranjang', [KeranjangController::class, 'index'])->middleware('auth');
 
+Route::post('/keranjang/{id}', [KeranjangController::class, 'addProduct'])->middleware('auth');
+
 Route::get('/invoice', [InvoiceController::class, 'index'])->middleware('auth');
 
 Route::get('/detail-invoice', [InvoiceController::class, 'showDetail'])->middleware('auth');

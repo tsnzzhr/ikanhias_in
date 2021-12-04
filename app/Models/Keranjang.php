@@ -5,14 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ikanhias extends Model
+class Keranjang extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['nama', 'ukuran', 'usia', 'harga', 'stok', 'deskripsi', 'gambar'];
+    protected $fillable = ['jumlah', 'harga'];
 
     public function detailKeranjang()
     {
         return $this->hasMany(DetailKeranjang::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
