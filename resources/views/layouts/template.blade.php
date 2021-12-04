@@ -108,7 +108,6 @@
                 <!-- Right Side Of Navbar -->
                 
                 <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -122,14 +121,6 @@
                             </li>
                         @endif
                     @else
-                        <!-- Authentication Links -->
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="/keranjang" style="text-align: center">Keranjang</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/invoice" style="text-align: center">Invoice</a>
-                        </li> --}}
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -142,12 +133,9 @@
                                 @if (auth()->user()->email == 'admin@admin.com')
 
                                 <a class="dropdown-item" href="{{ url('dashboard') }}" onclick="">
-                                    {{ __('Testing') }}
+                                    {{ __('Dashboard') }}
                                 <a class="dropdown-item" href="#" onclick="">
 
-                                <a class="dropdown-item" href="/products" onclick="">
-                                   {{ __('Dashboard') }}
-                                </a>
                                 @else
                                 <a class="dropdown-item" href="{{ url('dashboard_cust') }}" onclick="">
                                     {{ __('Akun') }}

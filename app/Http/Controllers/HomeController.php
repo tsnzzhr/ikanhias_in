@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ikanhias;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -11,8 +12,11 @@ class HomeController extends Controller
     public function index()
     {
         $ikanhias = Ikanhias::all();
+        $user = User::where('email', 'admin@admin.com')->get();
+
         return view('welcome', [
-            'products' => $ikanhias
+            'products' => $ikanhias,
+            'users' => $user
         ]);
     }
 

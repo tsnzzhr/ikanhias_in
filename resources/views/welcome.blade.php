@@ -419,11 +419,21 @@
                                         height="32px">
                                     <a class="d-inline-block popup-btn-{{ $product->id }}" href="#">Detail</a>
                                 </div>
-                                <div class="btn-bottom btn_cart">
-                                    <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
+                                @if (Auth::user())
+                                    @if (auth()->user()->email != 'admin@admin.com')
+                                    <div class="btn-bottom btn_cart">
+                                        <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
                                         height="32px">
-                                    <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
-                                </div>
+                                        <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
+                                    </div>
+                                    @endif
+                                @else
+                                    <div class="btn-bottom btn_cart">
+                                        <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
+                                        height="32px">
+                                        <a class="d-inline-block" href="{{ url('/keranjang') }}">+ Keranjang</a>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                         <div class="popup-wrap-{{ $product->id }}" 
@@ -521,9 +531,6 @@
 
                                     e.preventDefault();
                                 });
-
-                                //let myImage = document.getElementsByClassName('my-image')[0];
-                                //myImage.setAttribute('src', '[VALUE HERE]');
                             });
 
                         </script>
