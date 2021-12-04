@@ -35,14 +35,14 @@
   <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css" />
   <!-- summernote -->
   <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css" />
-  </head>
-  <div class="container hold-transition sidebar-mini layout-navbar-fixed">
+  <link rel="stylesheet" href="{{ asset('css/admin.css') }}"/>
+  <div class="container product-view hold-transition sidebar-mini layout-navbar-fixed">
         <!-- Content Header (Page header) -->
         <div class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">Produk</h1>
+                <h1 class="m-0 text-bold" style="color:#415A77">Produk</h1>
               </div>
               <!-- /.col -->
               <div class="col-sm-6">
@@ -67,7 +67,7 @@
                         <h2>CRUD Product Ikanhias</h2>
                     </div> --}}
                     <div class="pull-right">
-                        <a class="btn btn-success" href="{{ route('products.create') }}"> Add New Product</a>
+                        <a class="btn text-white" style="background-color:#415A77" href="{{ route('products.create') }}"> Add New Product</a>
                     </div>
                 </div>
             </div>
@@ -102,9 +102,9 @@
                     <td>{{ $product->deskripsi }}</td>
                     <td>
                         <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+                            <a class="btn text-white" style="background-color:#415A77 !important" href="{{ route('products.show',$product->id) }}">Show</a>
               
-                            <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                            <a class="btn text-white" style="background-color:#415A77 !important" href="{{ route('products.edit',$product->id) }}">Edit</a>
              
                             @csrf
                             @method('DELETE')

@@ -1,6 +1,7 @@
 @extends('products.layout')
      
 @section('content')
+    <div class="container mt-4">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -68,7 +69,6 @@
                 <div class="form-group">
                     <strong>Gambar:</strong>
                     <input type="file" name="gambar" class="form-control" placeholder="image">
-                    <img src="/imgProduct/{{ $product->gambar }}" width="300px">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -77,4 +77,5 @@
         </div>
      
     </form>
+    </div>
 @endsection
