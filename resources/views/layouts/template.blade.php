@@ -131,46 +131,9 @@
                             <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
                                 
                                 @if (auth()->user()->email == 'admin@admin.com')
-<<<<<<< HEAD
-
-                                <a class="dropdown-item" href="{{ url('dashboard') }}">
-                                    {{ __('Dashboard') }}
-                                </a>
-||||||| 975b140
-<<<<<<< HEAD
-||||||| 010980e
-<<<<<<< HEAD
-=======
-
->>>>>>> 97c207315533c089a7fc8687992777f056c5a447
-                                <a class="dropdown-item" href="{{ url('dashboard') }}" onclick="">
-<<<<<<< HEAD
-||||||| 010980e
-||||||| 6aebfee
-                                <a class="dropdown-item" href="#" onclick="">
-=======
-=======
-                                    {{ __('Testing') }}
-                                <a class="dropdown-item" href="#" onclick="">
-
->>>>>>> 97c207315533c089a7fc8687992777f056c5a447
                                 <a class="dropdown-item" href="/products" onclick="">
-<<<<<<< HEAD
                                     {{ __('Dashboard') }}
-||||||| 010980e
->>>>>>> bed537a0cbec69c5539092ac992a91af6303564d
-                                    {{ __('Dashboard') }}
-=======
-                                   {{ __('Dashboard') }}
->>>>>>> 97c207315533c089a7fc8687992777f056c5a447
                                 </a>
-=======
-
-                                <a class="dropdown-item" href="{{ url('dashboard') }}" onclick="">
-                                    {{ __('Dashboard') }}
-                                <a class="dropdown-item" href="#" onclick="">
-
->>>>>>> 05e35615ab9843814cc5a9b60b3a6840973904c1
                                 @else
                                 <a class="dropdown-item" href="{{ url('dashboard_cust') }}">
                                     {{ __('Akun') }}
