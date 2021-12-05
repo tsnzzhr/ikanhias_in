@@ -11,12 +11,12 @@
 <div class="container mt-4 invoice-detail p-0">
     <h2 class="title" style="font-weight: 800;">Detail Invoice</h2>
     <div class="card m-3">
-        <div class="row d-flex justify-content-between px-3 top">
+        {{-- <div class="row d-flex justify-content-between px-3 top">
             <div class="tag-invoice">
                 <h5 class="font-weight-bold">ORDER : <span>#IKNHS00001</span></h5>
                 <p class="m-0">Estimasi Tiba : <span>22/11/21 15:30:00</span></p>
             </div>
-        </div> <!-- Add class 'active' to progress -->
+        </div> <!-- Add class 'active' to progress --> --}}
         <div class="row d-flex justify-content-center">
             <div class="col-12">
                 <ul id="progressbar" class="text-center">
@@ -92,31 +92,39 @@
                 <tbody>
                     <tr>
                         <td>ID Invoice :</td>
-                        <td><span>INV/001/01/19112021</span></td>
+                        <td><span>INV/{{ $transaksi->user_id }}/{{ $transaksi->id }}/{{ $transaksi->created_at }}</span></td>
                     </tr>
                     <tr>
                         <td>Metode Pembayaran :</td>
-                        <td><span>OVO Payment Service</span></td>
+                        <td><span>{{ $transaksi->payment }}</span></td>
                     </tr>
                     <tr>
                         <td>Nomor Rekening/Akun Tujuan :</td>
-                        <td><span>+628123456789</span></td>
+                        <td><span>081123456789</span></td>
                     </tr>
                     <tr>
                         <td>Rekening/Akun Atas Nama :</td>
-                        <td><span>Budi</span></td>
+                        <td><span>{{ Auth::user()->name }}</span></td>
                     </tr>
                     <tr>
                         <td>Deadline Pembayaran :</td>
-                        <td><span>11 November 2021 23:59:59</span></td>
+                        <td><span>{{ $transaksi->deadline }}</span></td>
                     </tr>
                     <tr>
                         <td>Tanggal Pembayaran :</td>
                         <td><span>-</span></td>
                     </tr>
                     <tr>
-                        <td>Status Invoice :</td>
-                        <td><span class="text-muted">Menunggu Pembayaran</span></td>
+                        <td>Status transaksi :</td>
+                        <td>
+                            @if ($transaksi->status == 'belum')
+                            <span class="text-muted">Menunggu Pembayaran</span>
+                            @elseif ($transaksi->status == 'berhasil')
+                            <span class="text-success">Berhasil</span>
+                            @else
+                            <span class="text-danger">Gagal</span>
+                            @endif 
+                        </td>
                     </tr>
                 </tbody>
             </table>

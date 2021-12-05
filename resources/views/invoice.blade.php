@@ -9,16 +9,25 @@
 <div class="container mt-4 invoice-group">
     <h2 class="title" style="font-weight: 800;">List Invoice</h2>
     <div class="card-deck">
+        @foreach ($invoices as $invoice)
         <div class="card">
             <div class="card-horizontal">
                 <div class="card-body">
-                    <h5 class="card-title"><b>INV/001/03/19112021</b></h5><!--INV_IDPembeli_NoInvoicePembeli_TglCheckout-->
-                    <p class="card-text">Tanggal Pembayaran : <span>-</span></p>
-                    <p class="card-text">Deadline Pembayaran : <span>20/11/2021 23:59:00</span></p>
-                    <p class="card-text"><small>Status : <span class="text-muted">Menunggu  Pembayaran</span></small></p>
+                    <h5 class="card-title"><b>INV/{{ $invoice->user_id }}/{{ $invoice->id }}/{{ $invoice->created_at }}</b></h5><!--INV_IDPembeli_NoInvoicePembeli_TglCheckout-->
+                    {{-- <p class="card-text">Tanggal Pembayaran : <span>-</span></p> --}}
+                    <p class="card-text">Deadline Pembayaran : <span>{{ $invoice->deadline }}</span></p>
+                    <p class="card-text"><small>Status : 
+                        @if ($invoice->status == 'belum')
+                        <span class="text-muted">Menunggu Pembayaran</span>
+                        @elseif ($invoice->status == 'berhasil')
+                        <span class="text-success">Berhasil</span>
+                        @else
+                        <span class="text-danger">Gagal</span>
+                        @endif    
+                </small></p>
                 </div>
                 <div class="card-body align-self-center">
-                    <a class="btn btn-detail" title="Detail Invoice" href="{{ url('/detail-invoice') }}">
+                    <a class="btn btn-detail" title="Detail Invoice" href="{{ url('/detail-invoice'.'/'.$invoice->id) }}">
                         Detail Invoice
                     </a>
                     <a class="btn btn-detail" title="Detail Invoice" href="{{ url('/detail-invoice') }}">
@@ -27,7 +36,8 @@
                 </div>
             </div>
         </div>
-        <div class="card">
+        @endforeach
+        {{-- <div class="card">
             <div class="card-horizontal">
                 <div class="card-body">
                     <h5 class="card-title"><b>INV/001/02/19102021</b></h5><!--INV_IDPembeli_NoInvoicePembeli_TglCheckout-->
@@ -56,7 +66,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 @endsection

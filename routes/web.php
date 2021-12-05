@@ -36,7 +36,7 @@ Route::delete('/keranjang/{id}', [KeranjangController::class, 'remove'])->middle
 
 Route::get('/invoice', [InvoiceController::class, 'index'])->middleware('auth');
 
-Route::get('/detail-invoice', [InvoiceController::class, 'showDetail'])->middleware('auth');
+Route::get('/detail-invoice/{id}', [InvoiceController::class, 'showDetail'])->middleware('auth');
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->middleware('auth');
 

@@ -189,8 +189,7 @@
                             <p class="subtitle"><small><b>Mitra Kurir</b></small></p>
                             <p><small>JNE &ensp;|&ensp; J&T &ensp;|&ensp; TiKi</small></p>
                             <p class="subtitle"><small><b>Payment Service</b></small></p>
-                            <p><small>OVO &ensp;|&ensp; BRI &ensp;|&ensp; Mandiri &ensp;|&ensp; BCA &ensp;|&ensp; Dana
-                                    &ensp;|&ensp; LinkAja</small></p>
+                            <p><small>OVO &ensp;|&ensp; Dana &ensp;|&ensp; LinkAja</small></p>
                         </div>
                     </div>
                     <div class="card-item col-md">
