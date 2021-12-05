@@ -15,7 +15,7 @@
                     <h5 class="card-title"><b>INV/001/03/19112021</b></h5><!--INV_IDPembeli_NoInvoicePembeli_TglCheckout-->
                     <p class="card-text">Tanggal Pembayaran : <span>-</span></p>
                     <p class="card-text">Deadline Pembayaran : <span>20/11/2021 23:59:00</span></p>
-                    <p class="card-text"><small>Status : <span class="text-muted">Menunggu  Pembayaran</span></small></p>
+                    <p class="card-text"><small>Status : <span class="text-muted">Dalam Proses</span></small></p>
                 </div>
                 <div class="card-body align-self-center">
                     <a class="btn btn-detail" title="Detail Invoice" href="{{ url('/detail-invoice') }}">
