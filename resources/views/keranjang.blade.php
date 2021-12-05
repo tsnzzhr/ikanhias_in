@@ -24,11 +24,11 @@
                     <div class="card-body align-self-center">
                         <div class="btn btn-jumlah d-inline">
                             <form>
-                                <h4 class="m-0 "><small>Jumlah Item Checkout</small></h4>
-                                <h4 class="m-0 "><small>{{ $details['jumlah'] }}</small></h4>
+                                <p class="m-0 ">Jumlah Item Checkout :</h4>
+                                <h4 class="m-0 "><strong>{{ $details['jumlah'] }}</strong></h4>
                             </form>
                         </div>
-                        <form action="{{ url('/keranjang' . '/' . $details['id']) }}" method="post">
+                        <form class="d-inline m-1" action="{{ url('/keranjang' . '/' . $details['id']) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-delete">

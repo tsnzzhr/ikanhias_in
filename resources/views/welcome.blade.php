@@ -423,9 +423,7 @@
                                     </div>
                                     @if (Auth::user())
                                     @if (auth()->user()->email != 'admin@admin.com')
-                                    <div class="btn-bottom btn_cart">
-                                        <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
-                                        height="32px">
+                                    
                                         {{-- <a href="{{ url('/keranjang' . '/' . $product->id) }}" onclick="event.preventDefault();
                                             document.getElementById('addToCart').submit();">
                                             {{ __('+ Keranjang') }}
@@ -437,14 +435,12 @@
                                         </form> --}}
                                         <form action="{{ url('/keranjang' . '/' . $product->id) }}" method="post">
                                             @csrf
-                                            <button class="btn" type="submit">+ Keranjang</button>
+                                            <button class="btn btn-bottom btn_cart text-white" style="padding: 15px !important; width: 200px !important" type="submit"><i class="bi bi-cart-plus"></i> Keranjang</button>
                                         </form>
-                                    </div>
+                        
                                     @endif
                                 @else
                                 <div class="btn-bottom btn_cart">
-                                    <img class="d-inline-block" src="{{ asset('img/purchase.png') }}" width="32px"
-                                    height="32px">
                                     {{-- <a href="{{ url('/keranjang' . '/' . $product->id) }}" onclick="event.preventDefault();
                                                 document.getElementById('addToCart').submit();">
                                         {{ __('+ Keranjang') }}
@@ -454,9 +450,9 @@
                                         class="d-none">
                                         @csrf
                                     </form> --}}
-                                    <form action="{{ url('/keranjang' . '/' . $product->id) }}" method="post">
+                                    <form class="btn-bottom" action="{{ url('/keranjang' . '/' . $product->id) }}" method="post">
                                         @csrf
-                                        <button class="btn" type="submit">+ Keranjang</button>
+                                        <button class="btn d-inline-block" style="padding: 20px !important; width: 500px !important" type="submit"><i class="bi bi-cart-plus"></i> Keranjang</button>
                                     </form>
                                 </div>
                                 @endif
