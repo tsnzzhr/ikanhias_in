@@ -435,7 +435,7 @@
                                         </form> --}}
                                         <form action="{{ url('/keranjang' . '/' . $product->id) }}" method="post">
                                             @csrf
-                                            <button class="btn btn-bottom btn_cart text-white" style="padding: 15px !important; width: 200px !important" type="submit"><i class="bi bi-cart-plus"></i> Keranjang</button>
+                                            <button class="btn btn-bottom btn_cart text-white" style="padding: 15px !important; width: 200px !important" type="submit"><i style="font-size:25px;" class="bi bi-cart-plus"></i> Keranjang</button>
                                         </form>
                         
                                     @endif
@@ -452,7 +452,7 @@
                                     </form> --}}
                                     <form class="btn-bottom" action="{{ url('/keranjang' . '/' . $product->id) }}" method="post">
                                         @csrf
-                                        <button class="btn d-inline-block" style="padding: 20px !important; width: 500px !important" type="submit"><i class="bi bi-cart-plus"></i> Keranjang</button>
+                                        <button class="btn d-inline-block" style="padding: 20px !important; width: 500px !important" type="submit"><i style="font-size:25px;" class="bi bi-cart-plus"></i> Keranjang</button>
                                     </form>
                                 </div>
                                 @endif

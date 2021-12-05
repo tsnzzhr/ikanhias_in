@@ -111,7 +111,7 @@
                 </div> --}}
                 <li class="nav-item">
                     <div class="m-2" style="color: aliceblue">
-                        Back 
+                        Logout
                         <a href="{{ url('/') }}" class="ml-2">
                             <i class="fas fa-sign-out-alt" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout"></i>
                         </a>

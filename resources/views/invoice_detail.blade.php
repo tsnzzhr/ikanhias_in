@@ -116,7 +116,7 @@
                     </tr>
                     <tr>
                         <td>Status Invoice :</td>
-                        <td><span class="text-muted">Menunggu Pembayaran</span></td>
+                        <td><span class="text-muted">Dalam Proses</span></td>
                     </tr>
                 </tbody>
             </table>
