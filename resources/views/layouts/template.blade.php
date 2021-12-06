@@ -52,7 +52,7 @@
                 closeForm();
             }
         }
-    </script>
+    </script><!--
     <div class="chat-box d-inline">
         <div class="chat-popup" id="myForm">
             <form class="form-container">
@@ -75,7 +75,7 @@
         <div onclick="reaction()" class="btn chat-button">
             <i class="bi-chat-dots"></i>
         </div>
-    </div>
+    </div> -->
     </div>
     <div class="app template">
         <nav class="navbar navbar-expand-md shadow-sm">
@@ -121,7 +121,14 @@
                             </li>
                         @endif
                     @else
-
+                        @if (auth()->user()->email != 'admin@admin.com')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('keranjang') }}" style="text-align: center">Keranjang</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('invoice') }}" style="text-align: center">Invoice</a>
+                            </li>
+                        @endif
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="text-align: center">
@@ -187,7 +194,7 @@
                         <div class="card-content">
                             <div class="card-title"> PARTNERSHIP </div>
                             <p class="subtitle"><small><b>Mitra Kurir</b></small></p>
-                            <p><small>JNE &ensp;|&ensp; J&T &ensp;|&ensp; TiKi</small></p>
+                            <p><small>inExpress by ikanhias.in Group &ensp;</small></p>
                             <p class="subtitle"><small><b>Payment Service</b></small></p>
                             <p><small>OVO &ensp;|&ensp; Dana &ensp;|&ensp; LinkAja</small></p>
                         </div>
